@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1"
     />
 
     <!-- Bootstrap CSS -->
@@ -32,94 +32,71 @@
       <p class="getstarted subheading">
         Please fill in a name and choose your preferences
       </p>
+
       <div class="container">
         <div class="row">
           <div class="col getstarted-input-box">
-            <form>
-              <input type="text" id="name" name="name" placeholder="Name" />
+            <form
+              name="getstarted"
+              action="keeptrack.html">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value=""
+                placeholder="Name"
+                required
+              />
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <select
+                      class="btn btn-secondary"
+                      id="distance"
+                      name="distance"
+                      required
+                    >
+                      <option value="" disabled selected hidden
+                        >Distance</option
+                      >
+                      <option value="½marathon">½ Marathon</option>
+                      <option value="marathon">Marathon</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select
+                      class="btn btn-secondary"
+                      id="difficulty"
+                      name="difficulty"
+                      required
+                    >
+                      <option value="" disabled selected hidden
+                        >Difficulty</option
+                      >
+                      <option value="beginner">Beginner</option>
+                      <option value="intermediate">Intermediate</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select
+                      class="btn btn-secondary"
+                      id="duration"
+                      name="duration"
+                      required
+                    >
+                      <option value="" disabled selected hidden
+                        >Duration</option
+                      >
+                      <option value="13-weeks">13 weeks</option>
+                      <option value="26-weeks">26 weeks</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <input id="lets-go" class="btn btn-success" type="submit" value="Let's Go!" />
             </form>
           </div>
-          <div class="dropdown-selectors container">
-            <div class="row">
-              <div class="col-sm">
-                <div class="col getstarted-input-box">
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton1"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Distance
-                    </button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" href="#">½ Marathon</a>
-                      <a class="dropdown-item" href="#">Full Marathon</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="col getstarted-input-box">
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton2"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Difficulty
-                    </button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" href="#">Beginner</a>
-                      <a class="dropdown-item" href="#">Novice</a>
-                      <a class="dropdown-item" href="#">Intermediate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="col getstarted-input-box">
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton3"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Duration
-                    </button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" href="#">12 weeks</a>
-                      <a class="dropdown-item" href="#">26 weeks</a>
-                      <a class="dropdown-item" href="#">52 weeks</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <div id="lets-go">
-        <a href="keeptrack.html" type="button" class="btn btn-success"
-          >Let's Go!</a
-        >
       </div>
     </div>
 
@@ -140,6 +117,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/scripts.js"></script>
-    <script src="html2pdf.bundle.min.js"></script>
   </body>
 </html>

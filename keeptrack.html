@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -21,10 +18,10 @@
   </head>
 
   <body>
-      <div id="navbar">
-        <a href="index.html">Home</a>
-        <a href="getstarted.html">Get started</a>
-        <a href="keeptrack.html">Keep track</a>
+    <div id="navbar">
+      <a href="index.html">Home</a>
+      <a href="getstarted.html">Get started</a>
+      <a href="keeptrack.html">Keep track</a>
     </div>
     <div class="bg keeptrack">
       <h1 class="keeptrack heading">
@@ -33,80 +30,88 @@
       <h3 class="keeptrack subheading">
         Click on each day to update your progress when completed
       </h3>
-      <table id="table-print" class="table table-striped">
-        <thead>
+      <table id="table-center" class="table-fonts table-striped">
+        <thead class="table-bg table-head">
           <tr>
-            <th scope="col">Week</th>
-            <th scope="col">Monday</th>
-            <th scope="col">Tuesday</th>
-            <th scope="col">Wednesday</th>
-            <th scope="col">Thursday</th>
-            <th scope="col">Friday</th>
-            <th scope="col">Saturday</th>
-            <th scope="col">Sunday</th>
+            <th>Week</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="table-bg">
           <tr>
-            <th scope="row">1</th>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
+            <td class="rowspan" rowspan="2">1</td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
-            <td>Run</td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
+            <td class="today"></td>
           </tr>
         </tbody>
       </table>
-      <hr id="horizontal-line" />
+
+      <!-- The Modal -->
+      <div id="modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <button id="greenOK">Completed</button>
+          <button id="yellowOK">Partly done</button>
+          <button id="redOK">Skipped</button>
+          <button id="clear-color">Clear</button>
+        </div>
+      </div>
+
+      <hr class="horizontal-line" />
 
       <div class="container">
         <div class="row">
-          <div class="col-8">
-            <h2 id="share-some-text">Share with your community</h2>
-            <div class="row">
-              <div class="col-6">
-                <img
-                  id="facebook-logo"
-                  src="assets/images/facebook_New_Logo_(2015).png"
-                />
-              </div>
-              <div class="col-6">
-                <img
-                  id="instagram-logo"
-                  src="assets/images/Instagram-Logo-wide.png"
-                />
-              </div>
-            </div>
+          <div class="col-md-6">
+            <a onclick="window.print();" id="print-pdf" class="btn btn-success"
+              >Print</a
+            >
           </div>
-
-          <div id="vertical-line" class="col-1"></div>
-          <div class="col-3">
-            <a onclick="window.print();" id="print-pdf" class="btn btn-success">Print to pdf</a>
-            <a onclick="startOver()" id="start-over" class="btn btn-success">Start over</a>
+          <div class="col-md-6">
+            <a
+              href="getstarted.html"
+              onclick="startOver()"
+              id="start-over"
+              class="btn btn-success"
+              >Start over</a
+            >
           </div>
         </div>
+      </div>
+
+      <hr class="horizontal-line" />
+
+      <div>
+        <h3 id="share-some-text">Share with your community</h3>
+        <a
+          href=""
+          onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+      'facebook-share-dialog', 
+      'width=626,height=436'); 
+    return false;"
+          ><img id="facebook-logo" src="assets/images/facebook_New_Logo_.png"
+        /></a>
       </div>
     </div>
 
