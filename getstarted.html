@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <!-- Local CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Get Started</title>
-  </head>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<!-- Local CSS -->
+	<link rel="stylesheet" href="assets/css/style.css" />
 
-  <body>
-    <div id="navbar">
-      <a href="index.html">Home</a>
-      <a href="getstarted.html">Get started</a>
-      <a href="keeptrack.html">Keep track</a>
-    </div>
+	<title>Get Started</title>
+</head>
 
-    <div class="bg getstarted">
-      <h1 class="getstarted heading">Let's get you started</h1>
-      <p class="getstarted subheading">
-        Please fill in a name and choose your preferences
-      </p>
+<body>
 
-      <div class="container">
-        <div class="row">
-          <div class="col getstarted-input-box">
-            <form
-              name="getstarted"
-              action="keeptrack.html">
-              <input
+	<header>
+		<div id="navbar">
+			<a href="index.html">Home</a>
+			<a href="getstarted.html">Get started</a>
+			<a href="keeptrack.html">Keep track</a>
+		</div>
+	</header>
+
+	<section>
+		<div class="bg getstarted">
+			<h1 class="getstarted heading">Let's get you started</h1>
+			<p class="getstarted subheading">
+				Please fill in a name and choose your preferences
+			</p>
+
+			<div class="container">
+				<div class="row">
+					<div class="col getstarted-input-box">
+						<form name="getstarted" action="keeptrack.html">
+							<input
                 type="text"
                 id="name"
                 name="name"
@@ -47,10 +43,10 @@
                 placeholder="Name"
                 required
               />
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4">
-                    <select
+							<div class="container">
+								<div class="row">
+									<div class="col-md-4">
+										<select
                       class="btn btn-secondary"
                       id="distance"
                       name="distance"
@@ -62,9 +58,9 @@
                       <option value="½marathon">½ Marathon</option>
                       <option value="marathon">Marathon</option>
                     </select>
-                  </div>
-                  <div class="col-md-4">
-                    <select
+									</div>
+									<div class="col-md-4">
+										<select
                       class="btn btn-secondary"
                       id="difficulty"
                       name="difficulty"
@@ -76,9 +72,9 @@
                       <option value="beginner">Beginner</option>
                       <option value="intermediate">Intermediate</option>
                     </select>
-                  </div>
-                  <div class="col-md-4">
-                    <select
+									</div>
+									<div class="col-md-4">
+										<select
                       class="btn btn-secondary"
                       id="duration"
                       name="duration"
@@ -90,32 +86,32 @@
                       <option value="13-weeks">13 weeks</option>
                       <option value="26-weeks">26 weeks</option>
                     </select>
-                  </div>
-                </div>
-              </div>
-              <input id="lets-go" class="btn btn-success" type="submit" value="Let's Go!" />
+									</div>
+								</div>
+							</div>
+							<input id="lets-go" class="btn btn-success" type="submit" value="Let's Go!" />
             </form>
-          </div>
-        </div>
-      </div>
-    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    
+	<footer>
+		<div class="footer"></div>
+	</footer>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/js/scripts.js"></script>
-  </body>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+	<script src="assets/js/scripts.js"></script>
+</body>
+
 </html>

@@ -1,141 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <!-- Local CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Keeping Track</title>
-  </head>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<!-- Local CSS -->
+	<link rel="stylesheet" href="assets/css/style.css" />
 
-  <body>
-    <div id="navbar">
-      <a href="index.html">Home</a>
-      <a href="getstarted.html">Get started</a>
-      <a href="keeptrack.html">Keep track</a>
-    </div>
-    <div class="bg keeptrack">
-      <h1 class="keeptrack heading">
-        Keep track of your progress
-      </h1>
-      <h3 class="keeptrack subheading">
-        Click on each day to update your progress when completed
-      </h3>
-      <table id="table-center" class="table-fonts table-striped">
-        <thead class="table-bg table-head">
-          <tr>
-            <th>Week</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
-          </tr>
-        </thead>
-        <tbody class="table-bg">
-          <tr>
-            <td class="rowspan" rowspan="2">1</td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-          </tr>
-          <tr>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-            <td class="today"></td>
-          </tr>
-        </tbody>
-      </table>
+	<title>Keeping Track</title>
+</head>
 
-      <!-- The Modal -->
-      <div id="modal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <button id="greenOK">Completed</button>
-          <button id="yellowOK">Partly done</button>
-          <button id="redOK">Skipped</button>
-          <button id="clear-color">Clear</button>
-        </div>
-      </div>
+<body>
 
-      <hr class="horizontal-line" />
+	<header>
+		<div id="navbar">
+			<a href="index.html">Home</a>
+			<a href="getstarted.html">Get started</a>
+			<a href="keeptrack.html">Keep track</a>
+		</div>
+	</header>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <a onclick="window.print();" id="print-pdf" class="btn btn-success"
-              >Print</a
-            >
-          </div>
-          <div class="col-md-6">
-            <a
-              href="getstarted.html"
-              onclick="startOver()"
-              id="start-over"
-              class="btn btn-success"
-              >Start over</a
-            >
-          </div>
-        </div>
-      </div>
+	<section>
+		<div class="bg keeptrack">
+			<h1 class="keeptrack heading">
+				Keep track of your progress
+			</h1>
+			<h3 class="keeptrack subheading">
+				Click on each day to update your progress when completed
+			</h3>
+			<table id="table-center" class="table-fonts table-striped">
+				<thead class="table-bg table-head">
+					<tr>
+						<th>Week</th>
+						<th>Monday</th>
+						<th>Tuesday</th>
+						<th>Wednesday</th>
+						<th>Thursday</th>
+						<th>Friday</th>
+						<th>Saturday</th>
+						<th>Sunday</th>
+					</tr>
+				</thead>
+				<tbody class="table-bg">
+					<tr>
+						<td class="rowspan" rowspan="2">1</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">6K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">2</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">3</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">4</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">5</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">6</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">7</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">8</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">9</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">10</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">11</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">12</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+					<tr>
+						<td class="rowspan" rowspan="2">13</td>
+						<td class="today">3K</td>
+						<td class="today">5K</td>
+						<td class="today">3K</td>
+						<td class="today">OFF</td>
+						<td class="today">OFF</td>
+						<td class="today">8K</td>
+						<td class="today">OFF</td>
+					</tr>
+					<tr>
+						<td class="today">Easy</td>
+						<td class="today">Interval</td>
+						<td class="today">Easy</td>
+						<td class="today">Full rest</td>
+						<td class="today">Walk</td>
+						<td class="today">Race</td>
+						<td class="today">Full rest</td>
+					</tr>
+				</tbody>
+			</table>
 
-      <hr class="horizontal-line" />
+			<!-- The Modal -->
+			<div id="modal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<button id="greenOK">Completed</button>
+					<button id="yellowOK">Partly done</button>
+					<button id="redOK">Skipped</button>
+					<button id="clear-color">Clear</button>
+				</div>
+			</div>
 
-      <div>
-        <h3 id="share-some-text">Share with your community</h3>
-        <a
-          href=""
-          onclick="
+			<hr class="horizontal-line" />
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<a onclick="window.print();" id="print-pdf" class="btn btn-success">Print</a>
+					</div>
+					<div class="col-md-6">
+						<a href="getstarted.html" onclick="startOver()" id="start-over" class="btn btn-success">Start
+							over</a>
+					</div>
+				</div>
+			</div>
+
+			<hr class="horizontal-line" />
+
+			<div id="share-some">
+				<h3 id="share-some-text">Share with your community</h3>
+				<a href="" onclick="
     window.open(
       'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
       'facebook-share-dialog', 
       'width=626,height=436'); 
-    return false;"
-          ><img id="facebook-logo" src="assets/images/facebook_New_Logo_.png"
+    return false;"><img id="facebook-logo" src="assets/images/facebook_New_Logo_.png"
         /></a>
-      </div>
-    </div>
+			</div>
+		</div>
+	</section>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/js/scripts.js"></script>
-  </body>
+	<footer>
+		<div class="footer"></div>
+	</footer>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script src="assets/js/scripts.js"></script>
+</body>
+
 </html>

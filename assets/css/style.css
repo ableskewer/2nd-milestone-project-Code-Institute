@@ -69,12 +69,12 @@ body {
 
 .bg.mainpage {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/assets/images/maarten-van-den-heuvel-ky1w7eac5EM-unsplash.jpg");
+    url("../images/maarten-van-den-heuvel-ky1w7eac5EM-unsplash.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  min-height: 900px;
+  height: auto;
 }
 
 .btn {
@@ -98,6 +98,7 @@ body {
 
 #start-here {
   padding-top: 40px;
+  padding-bottom: 150px;
 }
 
 /* Get Started */
@@ -116,8 +117,8 @@ body {
 
 .bg.getstarted {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/assets/images/josh-gordon-fzHmP6z8OQ4-unsplash.jpg");
-  height: 100%;
+    url("../images/josh-gordon-fzHmP6z8OQ4-unsplash.jpg");
+  height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -163,8 +164,8 @@ body {
 
 .bg.keeptrack {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("/assets/images/elijah-o-donnell-vP7gLpFYyq4-unsplash.jpg");
-  height: 100%;
+    url("../images/elijah-o-donnell-vP7gLpFYyq4-unsplash.jpg");
+  height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -178,6 +179,10 @@ body {
   background-color: #000000;
 }
 
+#share-some {
+    padding-bottom: 100px;
+}
+
 #share-some-text {
   color: #fafafa;
   padding-bottom: 15px;
@@ -188,7 +193,6 @@ body {
   border: 1px solid black;
   border-radius: 8px;
   max-width: 160px;
-  margin-bottom: 5px;
 }
 
 #print-pdf,
@@ -232,8 +236,16 @@ th:first-child {
   width: 50px;
 }
 
-tr td:first-child {
+.rowspan {
   font-weight: bold;
+}
+
+tr:nth-child(even){
+    font-size: 0.6rem;
+}
+
+tr:nth-child(odd){
+    font-size: 0.8rem;
 }
 
 /* Modal PopUp & buttons */
@@ -303,6 +315,6 @@ tr td:first-child {
 
 @media screen and (max-width: 552px) {
   .table-fonts {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
