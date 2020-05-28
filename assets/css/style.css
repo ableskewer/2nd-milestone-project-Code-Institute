@@ -59,6 +59,7 @@ body {
   height: 33vh;
   padding-top: 100px;
   font-size: 3rem;
+  margin-bottom: 70px;
 }
 
 .mainpage.subheading {
@@ -75,6 +76,8 @@ body {
   background-size: cover;
   text-align: center;
   height: auto;
+  min-height: 100vh;
+  display: block;
 }
 
 .btn {
@@ -88,10 +91,11 @@ body {
   text-align: left;
   line-height: 2rem;
   color: #fafafa;
+  padding-left: 60px;
 }
 
 .wrap-bullet-points {
-  width: 320px;
+  width: 270px;
   padding-top: 50px;
   margin: auto;
 }
@@ -103,9 +107,21 @@ body {
 
 /* Get Started */
 
+.bg.getstarted {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/josh-gordon-fzHmP6z8OQ4-unsplash.jpg");
+  height: auto;
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
 .getstarted.heading {
   padding-top: 100px;
-  font-size: 3rem;
+  padding-bottom: 50px;
+  font-size: 2.5rem;
 }
 
 .getstarted.subheading {
@@ -115,15 +131,7 @@ body {
   padding-bottom: 20px;
 }
 
-.bg.getstarted {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images/josh-gordon-fzHmP6z8OQ4-unsplash.jpg");
-  height: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-}
+
 
 .getstarted-input-box {
   padding-top: 10px;
@@ -133,7 +141,7 @@ body {
 #name {
   width: 300px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 #distance,
@@ -143,10 +151,14 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   min-width: 200px;
+  background-color: rgb(41, 35, 35);
+  border-radius: 14px;
 }
+
 
 #lets-go {
   margin-top: 80px;
+  margin-bottom: 100px;
 }
 
 /* Keep Track */
@@ -159,13 +171,14 @@ body {
 .keeptrack.subheading {
   color: #fafafa;
   font-size: 1.2rem;
-  padding: 5px 0;
+  padding: 5px 10px;
 }
 
 .bg.keeptrack {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../images/elijah-o-donnell-vP7gLpFYyq4-unsplash.jpg");
   height: auto;
+  min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -314,7 +327,18 @@ tr:nth-child(odd){
 /* Media Queries */
 
 @media screen and (max-width: 552px) {
-  .table-fonts {
-    font-size: 0.7rem;
-  }
+
+#table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even){
+    font-size: 0.5rem;
+}
+
+tr:nth-child(odd){
+    font-size: 0.6rem;
+}
+
 }
