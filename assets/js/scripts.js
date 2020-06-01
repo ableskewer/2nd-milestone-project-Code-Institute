@@ -24,28 +24,29 @@ var yellow = document.getElementById("yellowOK");
 var red = document.getElementById("redOK");
 var clear = document.getElementById("clear-color");
 
-// When any day is clicked the modal appears
+// When any day is clicked the modal appears and you can click one of 4 buttons.
 for (var i = 0; i < btnsLength; i++) {
   btns[i].onclick = function () {
     modal.style.display = "block";
-  };
-  // Marking the color on the day with one of the buttons
-  green.onclick = function () {
-    day[0].style.backgroundColor = "#90EE90";
-    modal.style.display = "none";
-  };
-  yellow.onclick = function () {
-    day[0].style.backgroundColor = "#FFFF33";
-    modal.style.display = "none";
-  };
-  red.onclick = function () {
-    day.style.backgroundColor = "#FF2B00";
-    modal.style.display = "none";
-  };
 
-  clear.onclick = function () {
-    day.style.backgroundColor = "";
-    modal.style.display = "none";
+    var clickedButton = this;
+
+    green.onclick = function () {
+      clickedButton.style.backgroundColor = "#90EE90";
+      modal.style.display = "none";
+    };
+    yellow.onclick = function () {
+      clickedButton.style.backgroundColor = "#FFFF33";
+      modal.style.display = "none";
+    };
+    red.onclick = function () {
+      clickedButton.style.backgroundColor = "#FF2B00";
+      modal.style.display = "none";
+    };
+    clear.onclick = function () {
+      clickedButton.style.backgroundColor = "";
+      modal.style.display = "none";
+    };
   };
 }
 
