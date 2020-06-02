@@ -131,14 +131,12 @@ body {
   padding-bottom: 20px;
 }
 
-
-
 .getstarted-input-box {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-#name {
+#inputName {
   width: 300px;
   text-align: center;
   margin-bottom: 40px;
@@ -155,8 +153,7 @@ body {
   border-radius: 14px;
 }
 
-
-#lets-go {
+#btnLetsGo {
   margin-top: 80px;
   margin-bottom: 100px;
 }
@@ -172,6 +169,18 @@ body {
   color: #fafafa;
   font-size: 1.2rem;
   padding: 5px 10px;
+  margin-bottom: 30px;
+}
+
+#lsGetStartedFormOutput {
+  display: block;
+  color: #0b4b24;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #0d9c4e;
+  text-decoration: underline #000;
 }
 
 .bg.keeptrack {
@@ -193,7 +202,7 @@ body {
 }
 
 #share-some {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 #share-some-text {
@@ -253,12 +262,12 @@ th:first-child {
   font-weight: bold;
 }
 
-tr:nth-child(even){
-    font-size: 0.6rem;
+tr:nth-child(even) {
+  font-size: 0.6rem;
 }
 
-tr:nth-child(odd){
-    font-size: 0.8rem;
+tr:nth-child(odd) {
+  font-size: 0.8rem;
 }
 
 /* Modal PopUp & buttons */
@@ -327,18 +336,16 @@ tr:nth-child(odd){
 /* Media Queries */
 
 @media screen and (max-width: 552px) {
-
-#table {
+  #table {
     border-collapse: collapse;
     width: 100%;
-}
+  }
 
-tr:nth-child(even){
+  tr:nth-child(even) {
     font-size: 0.5rem;
-}
+  }
 
-tr:nth-child(odd){
+  tr:nth-child(odd) {
     font-size: 0.6rem;
-}
-
+  }
 }
