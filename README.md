@@ -16,3 +16,4 @@ to be used
 https://myclabs.github.io/jquery.confirm/
 https://stackoverflow.com/questions/9578348/best-way-to-execute-js-only-on-specific-page
 https://stackoverflow.com/questions/3262605/how-to-check-whether-a-storage-item-is-set
+https://stackoverflow.com/questions/25137460/localstorage-save-and-retrieve-css-of-an-element/25137656#25137656

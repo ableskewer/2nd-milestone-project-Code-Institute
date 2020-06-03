@@ -180,7 +180,6 @@ body {
   padding: 5px 10px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #0d9c4e;
-  text-decoration: underline #000;
 }
 
 .bg.keeptrack {
@@ -227,6 +226,7 @@ body {
 }
 
 /* Table */
+
 #table-center {
   margin: auto;
   text-align: center;
@@ -244,10 +244,6 @@ body {
 
 table {
   border-collapse: separate;
-}
-
-td:not(.rowspan):hover {
-  background-color: yellowgreen !important;
 }
 
 th {
@@ -268,6 +264,14 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   font-size: 0.8rem;
+}
+
+#table-six-months {
+    display: table-row-group;
+}
+
+td {
+    padding: 0;
 }
 
 /* Modal PopUp & buttons */
