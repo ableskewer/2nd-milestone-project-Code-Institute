@@ -232,14 +232,10 @@ body {
   text-align: center;
 }
 
-.table-bg-print {
-  background-image: linear-gradient(to right, #fafafa, #fafafa);
-  opacity: 0.6;
-}
 
 .table-bg {
   background-image: linear-gradient(to right, #fafafa, #fafafa);
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 table {
@@ -264,10 +260,6 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   font-size: 0.8rem;
-}
-
-#table-six-months {
-    display: table-row-group;
 }
 
 td {
