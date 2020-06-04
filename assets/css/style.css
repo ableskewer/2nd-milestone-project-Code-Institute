@@ -45,17 +45,20 @@ body {
 
 #navbar a:hover {
   background-color: #ddd;
-  color: black;
+  color: #c24e01;
 }
 
 /* --- Body Section  --- */
 
 /* Main Page */
 
-.mainpage.heading {
+.mainpage .heading {
   padding-top: 100px;
-  font-size: 3rem;
   margin-bottom: 60px;
+}
+
+.mainpage.heading h1 {
+  font-weight: 700;
 }
 
 #hr1mainpage {
@@ -72,8 +75,9 @@ body {
 
 .mainpage.subheading {
   color: #fafafa;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   margin: 60px 0;
+  font-weight: 200;
 }
 
 #hr2mainpage {
@@ -85,7 +89,7 @@ body {
     rgba(255, 255, 255, 0.75),
     rgba(255, 255, 255, 0)
   );
-  width: 40%;
+  width: 50%;
 }
 
 .bg.mainpage {
@@ -109,20 +113,16 @@ body {
 
 .wordCarousel {
   font-size: 36px;
-  font-weight: 100;
   color: #939393;
   margin-top: 40px;
 }
 
 .divCarousel {
   overflow: hidden;
-  position: relative;
   height: 65px;
 }
 .divCarousel li {
-  font-family: Serif;
   color: #ccc;
-  font-weight: 700;
   padding: 0 10px;
   height: 45px;
   margin-bottom: 45px;
@@ -171,8 +171,12 @@ body {
   text-align: left;
   line-height: 2rem;
   color: #fafafa;
-  padding: 10px 0px 10px 35px;
-  border: solid 3px white;
+  padding: 10px 0px 10px 40px;
+  border: solid 3px #f2f2f2;
+  -webkit-box-shadow: 0px 0px 6px 0px #c24e01;
+  -moz-box-shadow:    0px 0px 6px 0px #c24e01;
+  box-shadow:         0px 0px 6px 0px #c24e01;
+
 }
 
 /* .bullet-points li {
@@ -190,7 +194,7 @@ body {
   padding-bottom: 150px;
 }
 
-/*     Start here Button styling       */
+/*     Start here button styling       */
 .start-here-btn {
   width: 220px;
   height: 50px;
@@ -204,11 +208,6 @@ body {
   border-radius: 10px;
   line-height: 3rem;
   font-size: 20px;
-}
-
-.start-here-btn:hover {
-  color: #fafafa;
-  text-decoration: none;
 }
 
 .start-here-btn:before {
@@ -240,11 +239,16 @@ body {
 }
 
 .start-here-btn:active {
-  color: #ddd;
+  color: #ddd !important;
 }
 
 .start-here-btn:active:after {
   background: transparent;
+}
+
+.start-here-btn:hover {
+  color: #c24e01;
+  text-decoration: none;
 }
 
 .start-here-btn:hover:before {
@@ -291,15 +295,15 @@ body {
 .getstarted.heading {
   padding-top: 100px;
   padding-bottom: 50px;
-  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .getstarted.subheading {
   color: #fafafa;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding-top: 0;
-  padding-bottom: 20px;
-  text-decoration: underline;
+  margin: 60px 0;
+  font-weight: 200;
 }
 
 .getstarted-input-box {
@@ -309,24 +313,133 @@ body {
 
 #inputName {
   width: 300px;
+  height: 50px;
   text-align: center;
   margin-bottom: 40px;
+  border-radius: 4px;
 }
 
-#distance,
-#difficulty,
-#duration {
+#inputName:focus {
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+#threedropdowns {
+    margin: 30px auto;
+}
+
+.getstarted-options {
   font-size: 1.2rem;
   margin-top: 10px;
   margin-bottom: 10px;
   min-width: 200px;
-  background-color: rgb(41, 35, 35);
-  border-radius: 14px;
+  background-color: #333;
+  opacity: 0.9;
+  border-radius: 6px;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px 5px;
+  color: #fff;
+}
+
+.getstarted-options:hover {
+    color: #c24e01;
+    background-color: #ddd;
 }
 
 #btnLetsGo {
   margin-top: 80px;
   margin-bottom: 100px;
+}
+
+.lets-go-btn {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  line-height: 3rem;
+  font-size: 20px;
+}
+
+.lets-go-btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.lets-go-btn:active {
+  color: #ddd !important;
+}
+
+.lets-go-btn:active:after {
+  background: transparent;
+}
+
+.lets-go-btn:hover {
+  color: #c24e01;
+text-decoration: none;
+}
+
+.lets-go-btn:hover:before {
+  opacity: 1;
+}
+
+.lets-go-btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* Keep Track */
@@ -516,5 +629,12 @@ td {
   }
 }
 
-
 /* ------- The End ------- */
+
+:focus {
+    outline: -webkit-focus-ring-color auto 1px;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 0;
+}
+

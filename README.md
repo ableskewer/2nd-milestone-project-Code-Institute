@@ -24,3 +24,5 @@ https://fonts.google.com/
 
 https://css-tricks.com/examples/hrs/ hr-style-2
 https://freefrontend.com/css-text-animations/
+https://freefrontend.com/css-input-text/
+https://stackoverflow.com/questions/2587669/can-i-use-a-before-or-after-pseudo-element-on-an-input-field

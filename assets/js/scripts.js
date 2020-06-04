@@ -14,20 +14,21 @@ window.onscroll = function () {
 
 // .................... Scripts for index.html ............... //
 
-        //None so far
 
 // .................... Scripts for getstarted.html ............... //
 
-    //Saving user input from getstarted.html to localStorage
-
-var inputName = document.getElementById("inputName");
-var optionDistance = document.getElementById("distance");
-var optionDifficulty = document.getElementById("difficulty");
-var optionDuration = document.getElementById("duration");
-var btnLetsGo = document.getElementById("btnLetsGo");
-
 $(function () {
   if ($("body").is(".getStarted")) {
+
+    //Saving user input from getstarted.html to localStorage
+
+    var inputName = document.getElementById("inputName");
+    var optionDistance = document.getElementById("distance");
+    var optionDifficulty = document.getElementById("difficulty");
+    var optionDuration = document.getElementById("duration");
+    var btnLetsGo = document.getElementById("btnLetsGo");
+
+
     btnLetsGo.onclick = function () {
       var valueName = inputName.value;
       var valueDistance = optionDistance.value;

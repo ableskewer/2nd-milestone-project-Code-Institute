@@ -27,6 +27,9 @@
 	<section>
 		<div class="bg getstarted">
 			<h1 class="getstarted heading">Let's get you started</h1>
+
+			<hr id="hr1mainpage" />
+
 			<p class="getstarted subheading">
 				Please fill in a name and choose your preferences
 			</p>
@@ -34,7 +37,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col getstarted-input-box">
-						<form name="getstarted" action="keeptrack.html">
+						<form name="getstarted" action="keeptrack.html" id="lets-go-form">
 							<input
                 type="text"
                 id="inputName"
@@ -43,11 +46,11 @@
                 placeholder="Name"
                 required
               />
-							<div class="container">
+							<div id="threedropdowns" class="container">
 								<div class="row">
 									<div class="col-md-4">
 										<select
-                      class="btn btn-secondary"
+                      class="btn getstarted-options"
                       id="distance"
                       name="distance"
                       required
@@ -61,7 +64,7 @@
 									</div>
 									<div class="col-md-4">
 										<select
-                      class="btn btn-secondary"
+                      class="btn getstarted-options"
                       id="difficulty"
                       name="difficulty"
                       required
@@ -75,7 +78,7 @@
 									</div>
 									<div class="col-md-4">
 										<select
-                      class="btn btn-secondary"
+                      class="btn getstarted-options"
                       id="duration"
                       name="duration"
                       required
@@ -89,8 +92,11 @@
 									</div>
 								</div>
 							</div>
-							<input id="btnLetsGo" class="btn btn-success" type="submit" value="Let's Go" />
-            </form>
+
+						</form>
+
+						<button id="btnLetsGo" class="lets-go-btn" type="submit" form="lets-go-form" value="Submit">Let's Go</button>
+
 					</div>
 				</div>
 			</div>
