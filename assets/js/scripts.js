@@ -14,9 +14,11 @@ window.onscroll = function () {
 
 // .................... Scripts for index.html ............... //
 
+        //None so far
+
 // .................... Scripts for getstarted.html ............... //
 
-//Saving user input from getstarted.html to localStorage
+    //Saving user input from getstarted.html to localStorage
 
 var inputName = document.getElementById("inputName");
 var optionDistance = document.getElementById("distance");
@@ -46,14 +48,24 @@ $(function () {
 //Loading the user input from localeStorage creating a custom title for the training plan
 $(function () {
   if ($("body").is(".keepTrack")) {
+
     var lsOutputName = document.getElementById("lsOutputName");
     var Name = localStorage.name;
     var Distance = localStorage.distance;
     var Difficulty = localStorage.difficulty;
     var Duration = localStorage.duration;
     lsGetStartedFormOutput.innerHTML += `${Name}'s ${Duration} ${Difficulty} <br> ${Distance} Training Plan`;
+
+    //cycles through localStorage retrieving background-color for Ids with "week" in them
+    for ( var i = 0; i < localStorage.length; ++i ) {
+       dayId = localStorage.key(i)
+       bgColor = localStorage.getItem(localStorage.key(i));
+       
+       if (dayId.startsWith("week") == true)
+       document.getElementById(dayId).style.backgroundColor = bgColor;
+    }
   }
-});
+
 
 //Background-color change on Hover for each day, monday through sunday                          ***Currently Not working as intended***
 if ($(".today").css("background-color") == "") {
@@ -86,25 +98,33 @@ for (var i = 0; i < btnsLength; i++) {
     modal.style.display = "block";
     var clickedButton = this;
     var thisId = this.id;
+
     green.onclick = function () {
       clickedButton.style.backgroundColor = "#90EE90";
       modal.style.display = "none";
-      console.log(thisId);
       var thisBgColor = document.getElementById(thisId).style.backgroundColor;
-      console.log(thisBgColor);
       localStorage.setItem(thisId, thisBgColor);
     };
+
     yellow.onclick = function () {
       clickedButton.style.backgroundColor = "#FFFF33";
       modal.style.display = "none";
+      var thisBgColor = document.getElementById(thisId).style.backgroundColor;
+      localStorage.setItem(thisId, thisBgColor);
     };
+
     red.onclick = function () {
       clickedButton.style.backgroundColor = "#FF2B00";
       modal.style.display = "none";
+      var thisBgColor = document.getElementById(thisId).style.backgroundColor;
+      localStorage.setItem(thisId, thisBgColor);
     };
+    
     clear.onclick = function () {
       clickedButton.style.backgroundColor = "";
       modal.style.display = "none";
+      var thisBgColor = document.getElementById(thisId).style.backgroundColor;
+      localStorage.setItem(thisId, thisBgColor);
     };
   };
 }
@@ -121,10 +141,9 @@ window.onclick = function (event) {
 
 //If 3 month plan, 6 months wont show - else it will
 if (localStorage.getItem("duration") == "3 month") {
-  var table6months = document.getElementById("table-six-months");
+  var table6months = document.getElementById("table-6-months");
   table6months.style.display = "none";
 } else {
-  var table6months = document.getElementById("table-six-months");
   table6months.style.display = "table-row-group";
 }
 
@@ -471,6 +490,7 @@ if (
 }
 
 //Table 5   -- Distance: Marathon -- Difficulty: Beginner -- Duration: 3 months
+    
 if (
   localStorage.getItem("distance") == "Marathon" &&
   localStorage.getItem("difficulty") == "Beginner" &&
@@ -544,7 +564,7 @@ if (
   $(".tuesday").html("Interval Run");
   $(".tuesdaytext").html("30-45 min");
   $(".wednesday").html("Cross training");
-  $(".wednesdaytext").html("30-45 min");
+  $(".wednesdaytext").html("60 min");
   $(".thursdaytext").html("Easy effort");
   $(".friday").html("Off");
   $(".fridaytext").html("Full Rest");
@@ -810,3 +830,4 @@ if (
   $("#week26sundayUpper").html("Marathon");
   $("#week26sundayLower").html("Good Luck");
 }
+});

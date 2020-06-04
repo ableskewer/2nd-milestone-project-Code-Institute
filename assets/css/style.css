@@ -1,10 +1,7 @@
-@import url(
-  https://fonts.googleapis.com/css?family=Source + Sans + Pro:400,
-  900
-);
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 body,
@@ -12,7 +9,7 @@ html {
   height: 100%;
 }
 
-/* Styling of Fonts Colors Sizes*/
+/* Styling of Font-colors*/
 
 .mainpage.heading,
 .getstarted.heading,
@@ -23,7 +20,6 @@ html {
 /* --- Nav Bar ---*/
 body {
   margin: 0;
-  background-color: #f1f1f1;
 }
 
 #navbar {
@@ -34,6 +30,7 @@ body {
   display: block;
   transition: top 0.3s;
   opacity: 80%;
+  text-align: center;
 }
 
 #navbar a {
@@ -56,16 +53,39 @@ body {
 /* Main Page */
 
 .mainpage.heading {
-  height: 33vh;
   padding-top: 100px;
   font-size: 3rem;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
+}
+
+#hr1mainpage {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+  width: 70%;
 }
 
 .mainpage.subheading {
   color: #fafafa;
-  font-size: 1.2rem;
-  padding-top: 25px;
+  font-size: 1.7rem;
+  margin: 60px 0;
+}
+
+#hr2mainpage {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+  width: 40%;
 }
 
 .bg.mainpage {
@@ -87,22 +107,172 @@ body {
   font-size: 1.4rem;
 }
 
+.wordCarousel {
+  font-size: 36px;
+  font-weight: 100;
+  color: #939393;
+  margin-top: 40px;
+}
+
+.divCarousel {
+  overflow: hidden;
+  position: relative;
+  height: 65px;
+}
+.divCarousel li {
+  font-family: Serif;
+  color: #ccc;
+  font-weight: 700;
+  padding: 0 10px;
+  height: 45px;
+  margin-bottom: 45px;
+  display: block;
+}
+
+.flip4 {
+  animation: flip4 20s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+  padding: 0;
+}
+
+@keyframes flip4 {
+  0% {
+    margin-top: -360px;
+  }
+  5% {
+    margin-top: -270px;
+  }
+  25% {
+    margin-top: -270px;
+  }
+  30% {
+    margin-top: -180px;
+  }
+  50% {
+    margin-top: -180px;
+  }
+  55% {
+    margin-top: -90px;
+  }
+  75% {
+    margin-top: -90px;
+  }
+  80% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
+}
+
 .bullet-points {
   text-align: left;
   line-height: 2rem;
   color: #fafafa;
-  padding-left: 60px;
+  padding: 10px 0px 10px 35px;
+  border: solid 3px white;
 }
+
+/* .bullet-points li {
+  display: inline;
+} */
 
 .wrap-bullet-points {
   width: 270px;
-  padding-top: 50px;
+  padding-top: 30px;
   margin: auto;
 }
 
 #start-here {
   padding-top: 40px;
   padding-bottom: 150px;
+}
+
+/*     Start here Button styling       */
+.start-here-btn {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  line-height: 3rem;
+  font-size: 20px;
+}
+
+.start-here-btn:hover {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.start-here-btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.start-here-btn:active {
+  color: #ddd;
+}
+
+.start-here-btn:active:after {
+  background: transparent;
+}
+
+.start-here-btn:hover:before {
+  opacity: 1;
+}
+
+.start-here-btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* Get Started */
@@ -129,6 +299,7 @@ body {
   font-size: 1.2rem;
   padding-top: 0;
   padding-bottom: 20px;
+  text-decoration: underline;
 }
 
 .getstarted-input-box {
@@ -232,7 +403,6 @@ body {
   text-align: center;
 }
 
-
 .table-bg {
   background-image: linear-gradient(to right, #fafafa, #fafafa);
   opacity: 0.6;
@@ -263,7 +433,7 @@ tr:nth-child(odd) {
 }
 
 td {
-    padding: 0;
+  padding: 0;
 }
 
 /* Modal PopUp & buttons */
@@ -345,3 +515,6 @@ td {
     font-size: 0.6rem;
   }
 }
+
+
+/* ------- The End ------- */
