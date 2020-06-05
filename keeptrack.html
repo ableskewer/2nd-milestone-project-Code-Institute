@@ -1,642 +1,1679 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-	<!-- Local CSS -->
-	<link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+      crossorigin="anonymous"
+    />
 
-	<title>Keeping Track</title>
-</head>
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-<body class="keepTrack">
-	<header>
-		<div id="navbar">
-			<a href="index.html">Home</a>
-			<a href="getstarted.html">Get started</a>
-			<a href="keeptrack.html">Keep track</a>
-		</div>
-	</header>
+    <title>Keeping Track</title>
+  </head>
 
-	<section>
-		<div class="bg keeptrack">
-			<h1 class="keeptrack heading">
-				Keep track of your progress
-			</h1>
-			<h3 class="keeptrack subheading">
-				Click on each day to update your progress when completed <br> The progress will be saved even if you close the browser. <br> Does not work for incognito.
-			</h3>
-			<h2 id="lsGetStartedFormOutput"></h2>
+  <body class="keeptrack">
+    <header>
+      <div id="navbar">
+        <a href="index.html">Home</a>
+        <a href="getstarted.html">Get started</a>
+        <a href="keeptrack.html">Keep track</a>
+      </div>
+    </header>
 
-			<div class="table-div">
-				<table id="table-center" class="table-fonts table-striped">
+    <section>
+      <div class="bg keeptrack">
+        <h1 class="keeptrack heading">
+          Keep track of your progress
+        </h1>
+        <hr class="hr1" />
+        <h3 class="keeptrack subheading">
+          <p>Click on each day to update your progress.</p>
+          The progress will be saved even if you close the browser.<br />
+          <small>(Does not work for incognito)</small>
+        </h3>
+        <h4 class="wordCarousel">
+          <div class="divCarousel">
+            <ul class="flip4">
+              <li class="lsGetStartedFormOutput">Don't give up</li>
+              <li class="lsGetStartedFormOutput">Believe in yourself</li>
+              <li class="lsGetStartedFormOutput">You are Amazing</li>
+              <li class="lsGetStartedFormOutput">Good luck</li>
+            </ul>
+          </div>
+        </h4>
 
-					<thead class="table-bg table-head">
-						<tr>
-							<th>Week</th>
-							<th>Monday</th>
-							<th>Tuesday</th>
-							<th>Wednesday</th>
-							<th>Thursday</th>
-							<th>Friday</th>
-							<th>Saturday</th>
-							<th>Sunday</th>
-						</tr>
-					</thead>
+        <div class="table-div">
+          <table id="table-center" class="table-fonts table-striped">
+            <thead class="table-bg table-head">
+              <tr>
+                <th class="tg-0lax" id="lsOutputTableHeader" colspan="8"></th>
+              </tr>
+              <tr>
+                <th>Week</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+              </tr>
+            </thead>
 
-					<tbody id="table-3-months" class="table-bg">
+            <tbody id="table-3-months" class="table-bg">
+              <tr class="week1">
+                <td class="rowspan" rowspan="2">1</td>
+                <td id="week1mondayUpper" class="today monday week1monday"></td>
+                <td id="week1tuesdayUpper" class="today tuesday week1tuesday"></td>
+                <td id="week1wednesdayUpper" class="today wednesday week1wednesday"></td>
+                <td id="week1thursdayUpper" class="today thursday week1thursday"></td>
+                <td id="week1fridayUpper" class="today friday week1friday"></td>
+                <td id="week1saturdayUpper" class="today saturday week1saturday"></td>
+                <td id="week1sundayUpper" class="today sunday week1sunday"></td>
+              </tr>
+              
+              <tr class="week1">
+                <td
+                  id="week1mondayLower"
+                  class="today mondaytext week1monday"
+                ></td>
+                <td
+                  id="week1tuesdayLower"
+                  class="today tuesdaytext week1tuesday"
+                ></td>
+                <td
+                  id="week1wednesdayLower"
+                  class="today wednesdaytext week1wednesday"
+                ></td>
+                <td
+                  id="week1thursdayLower"
+                  class="today thursdaytext week1thursday"
+                ></td>
+                <td
+                  id="week1fridayLower"
+                  class="today fridaytext week1friday"
+                ></td>
+                <td
+                  id="week1saturdayLower"
+                  class="today saturdaytext week1saturday"
+                ></td>
+                <td
+                  id="week1sundayLower"
+                  class="today sundaytext week1sunday"
+                ></td>
+              </tr>
 
-						<tr class="week1">
-							<td class="rowspan" rowspan="2">1</td>
-							<td id="week1mondayUpper" class="today monday week1monday"></td>
-							<td id="week1tuesdayUpper" class="today tuesday week1tuesday"></td>
-							<td id="week1wednesdayUpper" class="today wednesday week1wednesday"></td>
-							<td id="week1thursdayUpper" class="today thursday week1thursday"></td>
-							<td id="week1fridayUpper" class="today friday week1friday"></td>
-							<td id="week1saturdayUpper" class="today saturday week1saturday"></td>
-							<td id="week1sundayUpper" class="today sunday week1sunday"></td>
-						</tr>
-						<tr class="week1">
-							<td id="week1mondayLower" class="today mondaytext week1monday"></td>
-							<td id="week1tuesdayLower" class="today tuesdaytext week1tuesday"></td>
-							<td id="week1wednesdayLower" class="today wednesdaytext week1wednesday"></td>
-							<td id="week1thursdayLower" class="today thursdaytext week1thursday"></td>
-							<td id="week1fridayLower" class="today fridaytext week1friday"></td>
-							<td id="week1saturdayLower" class="today saturdaytext week1saturday"></td>
-							<td id="week1sundayLower" class="today sundaytext week1sunday"></td>
-						</tr>
+              <tr class="week2">
+                <td class="rowspan" rowspan="2">2</td>
+                <td id="week2mondayUpper" class="today monday week2monday"></td>
+                <td
+                  id="week2tuesdayUpper"
+                  class="today tuesday week2tuesday"
+                ></td>
+                <td
+                  id="week2wednesdayUpper"
+                  class="today wednesday week2wednesday"
+                ></td>
+                <td
+                  id="week2thursdayUpper"
+                  class="today thursday week2thursday"
+                ></td>
+                <td id="week2fridayUpper" class="today friday week2friday"></td>
+                <td
+                  id="week2saturdayUpper"
+                  class="today saturday week2saturday"
+                ></td>
+                <td id="week2sundayUpper" class="today sunday week2sunday"></td>
+              </tr>
+              <tr class="week2">
+                <td
+                  id="week2mondayLower"
+                  class="today mondaytext week2monday"
+                ></td>
+                <td
+                  id="week2tuesdayLower"
+                  class="today tuesdaytext week2tuesday"
+                ></td>
+                <td
+                  id="week2wednesdayLower"
+                  class="today wednesdaytext week2wednesday"
+                ></td>
+                <td
+                  id="week2thursdayLower"
+                  class="today thursdaytext week2thursday"
+                ></td>
+                <td
+                  id="week2fridayLower"
+                  class="today fridaytext week2friday"
+                ></td>
+                <td
+                  id="week2saturdayLower"
+                  class="today saturdaytext week2saturday"
+                ></td>
+                <td
+                  id="week2sundayLower"
+                  class="today sundaytext week2sunday"
+                ></td>
+              </tr>
 
-						<tr class="week2">
-							<td class="rowspan" rowspan="2">2</td>
-							<td id="week2mondayUpper" class="today monday week2monday"></td>
-							<td id="week2tuesdayUpper" class="today tuesday week2tuesday"></td>
-							<td id="week2wednesdayUpper" class="today wednesday week2wednesday"></td>
-							<td id="week2thursdayUpper" class="today thursday week2thursday"></td>
-							<td id="week2fridayUpper" class="today friday week2friday"></td>
-							<td id="week2saturdayUpper" class="today saturday week2saturday"></td>
-							<td id="week2sundayUpper" class="today sunday week2sunday"></td>
-						</tr>
-						<tr class="week2">
-							<td id="week2mondayLower" class="today mondaytext week2monday"></td>
-							<td id="week2tuesdayLower" class="today tuesdaytext week2tuesday"></td>
-							<td id="week2wednesdayLower" class="today wednesdaytext week2wednesday"></td>
-							<td id="week2thursdayLower" class="today thursdaytext week2thursday"></td>
-							<td id="week2fridayLower" class="today fridaytext week2friday"></td>
-							<td id="week2saturdayLower" class="today saturdaytext week2saturday"></td>
-							<td id="week2sundayLower" class="today sundaytext week2sunday"></td>
-						</tr>
+              <tr class="week3">
+                <td class="rowspan" rowspan="2">3</td>
+                <td id="week3mondayUpper" class="today monday week3monday"></td>
+                <td
+                  id="week3tuesdayUpper"
+                  class="today tuesday week3tuesday"
+                ></td>
+                <td
+                  id="week3wednesdayUpper"
+                  class="today wednesday week3wednesday"
+                ></td>
+                <td
+                  id="week3thursdayUpper"
+                  class="today thursday week3thursday"
+                ></td>
+                <td id="week3fridayUpper" class="today friday week3friday"></td>
+                <td
+                  id="week3saturdayUpper"
+                  class="today saturday week3saturday"
+                ></td>
+                <td id="week3sundayUpper" class="today sunday week3sunday"></td>
+              </tr>
+              <tr class="week3">
+                <td
+                  id="week3mondayLower"
+                  class="today mondaytext week3monday"
+                ></td>
+                <td
+                  id="week3tuesdayLower"
+                  class="today tuesdaytext week3tuesday"
+                ></td>
+                <td
+                  id="week3wednesdayLower"
+                  class="today wednesdaytext week3wednesday"
+                ></td>
+                <td
+                  id="week3thursdayLower"
+                  class="today thursdaytext week3thursday"
+                ></td>
+                <td
+                  id="week3fridayLower"
+                  class="today fridaytext week3friday"
+                ></td>
+                <td
+                  id="week3saturdayLower"
+                  class="today saturdaytext week3saturday"
+                ></td>
+                <td
+                  id="week3sundayLower"
+                  class="today sundaytext week3sunday"
+                ></td>
+              </tr>
 
-						<tr class="week3">
-							<td class="rowspan" rowspan="2">3</td>
-							<td id="week3mondayUpper" class="today monday week3monday"></td>
-							<td id="week3tuesdayUpper" class="today tuesday week3tuesday"></td>
-							<td id="week3wednesdayUpper" class="today wednesday week3wednesday"></td>
-							<td id="week3thursdayUpper" class="today thursday week3thursday"></td>
-							<td id="week3fridayUpper" class="today friday week3friday"></td>
-							<td id="week3saturdayUpper" class="today saturday week3saturday"></td>
-							<td id="week3sundayUpper" class="today sunday week3sunday"></td>
-						</tr>
-						<tr class="week3">
-							<td id="week3mondayLower" class="today mondaytext week3monday"></td>
-							<td id="week3tuesdayLower" class="today tuesdaytext week3tuesday"></td>
-							<td id="week3wednesdayLower" class="today wednesdaytext week3wednesday"></td>
-							<td id="week3thursdayLower" class="today thursdaytext week3thursday"></td>
-							<td id="week3fridayLower" class="today fridaytext week3friday"></td>
-							<td id="week3saturdayLower" class="today saturdaytext week3saturday"></td>
-							<td id="week3sundayLower" class="today sundaytext week3sunday"></td>
-						</tr>
+              <tr class="week4">
+                <td class="rowspan" rowspan="2">4</td>
+                <td id="week4mondayUpper" class="today monday week4monday"></td>
+                <td
+                  id="week4tuesdayUpper"
+                  class="today tuesday week4tuesday"
+                ></td>
+                <td
+                  id="week4wednesdayUpper"
+                  class="today wednesday week4wednesday"
+                ></td>
+                <td
+                  id="week4thursdayUpper"
+                  class="today thursday week4thursday"
+                ></td>
+                <td id="week4fridayUpper" class="today friday week4friday"></td>
+                <td
+                  id="week4saturdayUpper"
+                  class="today saturday week4saturday"
+                ></td>
+                <td id="week4sundayUpper" class="today sunday week4sunday"></td>
+              </tr>
+              <tr class="week4">
+                <td
+                  id="week4mondayLower"
+                  class="today mondaytext week4monday"
+                ></td>
+                <td
+                  id="week4tuesdayLower"
+                  class="today tuesdaytext week4tuesday"
+                ></td>
+                <td
+                  id="week4wednesdayLower"
+                  class="today wednesdaytext week4wednesday"
+                ></td>
+                <td
+                  id="week4thursdayLower"
+                  class="today thursdaytext week4thursday"
+                ></td>
+                <td
+                  id="week4fridayLower"
+                  class="today fridaytext week4friday"
+                ></td>
+                <td
+                  id="week4saturdayLower"
+                  class="today saturdaytext week4saturday"
+                ></td>
+                <td
+                  id="week4sundayLower"
+                  class="today sundaytext week4sunday"
+                ></td>
+              </tr>
 
-						<tr class="week4">
-							<td class="rowspan" rowspan="2">4</td>
-							<td id="week4mondayUpper" class="today monday week4monday"></td>
-							<td id="week4tuesdayUpper" class="today tuesday week4tuesday"></td>
-							<td id="week4wednesdayUpper" class="today wednesday week4wednesday"></td>
-							<td id="week4thursdayUpper" class="today thursday week4thursday"></td>
-							<td id="week4fridayUpper" class="today friday week4friday"></td>
-							<td id="week4saturdayUpper" class="today saturday week4saturday"></td>
-							<td id="week4sundayUpper" class="today sunday week4sunday"></td>
-						</tr>
-						<tr class="week4">
-							<td id="week4mondayLower" class="today mondaytext week4monday"></td>
-							<td id="week4tuesdayLower" class="today tuesdaytext week4tuesday"></td>
-							<td id="week4wednesdayLower" class="today wednesdaytext week4wednesday"></td>
-							<td id="week4thursdayLower" class="today thursdaytext week4thursday"></td>
-							<td id="week4fridayLower" class="today fridaytext week4friday"></td>
-							<td id="week4saturdayLower" class="today saturdaytext week4saturday"></td>
-							<td id="week4sundayLower" class="today sundaytext week4sunday"></td>
-						</tr>
+              <tr class="week5">
+                <td class="rowspan" rowspan="2">5</td>
+                <td id="week5mondayUpper" class="today monday week5monday"></td>
+                <td
+                  id="week5tuesdayUpper"
+                  class="today tuesday week5tuesday"
+                ></td>
+                <td
+                  id="week5wednesdayUpper"
+                  class="today wednesday week5wednesday"
+                ></td>
+                <td
+                  id="week5thursdayUpper"
+                  class="today thursday week5thursday"
+                ></td>
+                <td id="week5fridayUpper" class="today friday week5friday"></td>
+                <td
+                  id="week5saturdayUpper"
+                  class="today saturday week5saturday"
+                ></td>
+                <td id="week5sundayUpper" class="today sunday week5sunday"></td>
+              </tr>
+              <tr class="week5">
+                <td
+                  id="week5mondayLower"
+                  class="today mondaytext week5monday"
+                ></td>
+                <td
+                  id="week5tuesdayLower"
+                  class="today tuesdaytext week5tuesday"
+                ></td>
+                <td
+                  id="week5wednesdayLower"
+                  class="today wednesdaytext week5wednesday"
+                ></td>
+                <td
+                  id="week5thursdayLower"
+                  class="today thursdaytext week5thursday"
+                ></td>
+                <td
+                  id="week5fridayLower"
+                  class="today fridaytext week5friday"
+                ></td>
+                <td
+                  id="week5saturdayLower"
+                  class="today saturdaytext week5saturday"
+                ></td>
+                <td
+                  id="week5sundayLower"
+                  class="today sundaytext week5sunday"
+                ></td>
+              </tr>
 
-						<tr class="week5">
-							<td class="rowspan" rowspan="2">5</td>
-							<td id="week5mondayUpper" class="today monday week5monday"></td>
-							<td id="week5tuesdayUpper" class="today tuesday week5tuesday"></td>
-							<td id="week5wednesdayUpper" class="today wednesday week5wednesday"></td>
-							<td id="week5thursdayUpper" class="today thursday week5thursday"></td>
-							<td id="week5fridayUpper" class="today friday week5friday"></td>
-							<td id="week5saturdayUpper" class="today saturday week5saturday"></td>
-							<td id="week5sundayUpper" class="today sunday week5sunday"></td>
-						</tr>
-						<tr class="week5">
-							<td id="week5mondayLower" class="today mondaytext week5monday"></td>
-							<td id="week5tuesdayLower" class="today tuesdaytext week5tuesday"></td>
-							<td id="week5wednesdayLower" class="today wednesdaytext week5wednesday"></td>
-							<td id="week5thursdayLower" class="today thursdaytext week5thursday"></td>
-							<td id="week5fridayLower" class="today fridaytext week5friday"></td>
-							<td id="week5saturdayLower" class="today saturdaytext week5saturday"></td>
-							<td id="week5sundayLower" class="today sundaytext week5sunday"></td>
-						</tr>
+              <tr class="week6">
+                <td class="rowspan" rowspan="2">6</td>
+                <td id="week6mondayUpper" class="today monday week6monday"></td>
+                <td
+                  id="week6tuesdayUpper"
+                  class="today tuesday week6tuesday"
+                ></td>
+                <td
+                  id="week6wednesdayUpper"
+                  class="today wednesday week6wednesday"
+                ></td>
+                <td
+                  id="week6thursdayUpper"
+                  class="today thursday week6thursday"
+                ></td>
+                <td id="week6fridayUpper" class="today friday week6friday"></td>
+                <td
+                  id="week6saturdayUpper"
+                  class="today saturday week6saturday"
+                ></td>
+                <td id="week6sundayUpper" class="today sunday week6sunday"></td>
+              </tr>
+              <tr class="week6">
+                <td
+                  id="week6mondayLower"
+                  class="today mondaytext week6monday"
+                ></td>
+                <td
+                  id="week6tuesdayLower"
+                  class="today tuesdaytext week6tuesday"
+                ></td>
+                <td
+                  id="week6wednesdayLower"
+                  class="today wednesdaytext week6wednesday"
+                ></td>
+                <td
+                  id="week6thursdayLower"
+                  class="today thursdaytext week6thursday"
+                ></td>
+                <td
+                  id="week6fridayLower"
+                  class="today fridaytext week6friday"
+                ></td>
+                <td
+                  id="week6saturdayLower"
+                  class="today saturdaytext week6saturday"
+                ></td>
+                <td
+                  id="week6sundayLower"
+                  class="today sundaytext week6sunday"
+                ></td>
+              </tr>
 
-						<tr class="week6">
-							<td class="rowspan" rowspan="2">6</td>
-							<td id="week6mondayUpper" class="today monday week6monday"></td>
-							<td id="week6tuesdayUpper" class="today tuesday week6tuesday"></td>
-							<td id="week6wednesdayUpper" class="today wednesday week6wednesday"></td>
-							<td id="week6thursdayUpper" class="today thursday week6thursday"></td>
-							<td id="week6fridayUpper" class="today friday week6friday"></td>
-							<td id="week6saturdayUpper" class="today saturday week6saturday"></td>
-							<td id="week6sundayUpper" class="today sunday week6sunday"></td>
-						</tr>
-						<tr class="week6">
-							<td id="week6mondayLower" class="today mondaytext week6monday"></td>
-							<td id="week6tuesdayLower" class="today tuesdaytext week6tuesday"></td>
-							<td id="week6wednesdayLower" class="today wednesdaytext week6wednesday"></td>
-							<td id="week6thursdayLower" class="today thursdaytext week6thursday"></td>
-							<td id="week6fridayLower" class="today fridaytext week6friday"></td>
-							<td id="week6saturdayLower" class="today saturdaytext week6saturday"></td>
-							<td id="week6sundayLower" class="today sundaytext week6sunday"></td>
-						</tr>
+              <tr class="week7">
+                <td class="rowspan" rowspan="2">7</td>
+                <td id="week7mondayUpper" class="today monday week7monday"></td>
+                <td
+                  id="week7tuesdayUpper"
+                  class="today tuesday week7tuesday"
+                ></td>
+                <td
+                  id="week7wednesdayUpper"
+                  class="today wednesday week7wednesday"
+                ></td>
+                <td
+                  id="week7thursdayUpper"
+                  class="today thursday week7thursday"
+                ></td>
+                <td id="week7fridayUpper" class="today friday week7friday"></td>
+                <td
+                  id="week7saturdayUpper"
+                  class="today saturday week7saturday"
+                ></td>
+                <td id="week7sundayUpper" class="today sunday week7sunday"></td>
+              </tr>
+              <tr class="week7">
+                <td
+                  id="week7mondayLower"
+                  class="today mondaytext week7monday"
+                ></td>
+                <td
+                  id="week7tuesdayLower"
+                  class="today tuesdaytext week7tuesday"
+                ></td>
+                <td
+                  id="week7wednesdayLower"
+                  class="today wednesdaytext week7wednesday"
+                ></td>
+                <td
+                  id="week7thursdayLower"
+                  class="today thursdaytext week7thursday"
+                ></td>
+                <td
+                  id="week7fridayLower"
+                  class="today fridaytext week7friday"
+                ></td>
+                <td
+                  id="week7saturdayLower"
+                  class="today saturdaytext week7saturday"
+                ></td>
+                <td
+                  id="week7sundayLower"
+                  class="today sundaytext week7sunday"
+                ></td>
+              </tr>
 
-						<tr class="week7">
-							<td class="rowspan" rowspan="2">7</td>
-							<td id="week7mondayUpper" class="today monday week7monday"></td>
-							<td id="week7tuesdayUpper" class="today tuesday week7tuesday"></td>
-							<td id="week7wednesdayUpper" class="today wednesday week7wednesday"></td>
-							<td id="week7thursdayUpper" class="today thursday week7thursday"></td>
-							<td id="week7fridayUpper" class="today friday week7friday"></td>
-							<td id="week7saturdayUpper" class="today saturday week7saturday"></td>
-							<td id="week7sundayUpper" class="today sunday week7sunday"></td>
-						</tr>
-						<tr class="week7">
-							<td id="week7mondayLower" class="today mondaytext week7monday"></td>
-							<td id="week7tuesdayLower" class="today tuesdaytext week7tuesday"></td>
-							<td id="week7wednesdayLower" class="today wednesdaytext week7wednesday"></td>
-							<td id="week7thursdayLower" class="today thursdaytext week7thursday"></td>
-							<td id="week7fridayLower" class="today fridaytext week7friday"></td>
-							<td id="week7saturdayLower" class="today saturdaytext week7saturday"></td>
-							<td id="week7sundayLower" class="today sundaytext week7sunday"></td>
-						</tr>
+              <tr class="week8">
+                <td class="rowspan" rowspan="2">8</td>
+                <td id="week8mondayUpper" class="today monday week8monday"></td>
+                <td
+                  id="week8tuesdayUpper"
+                  class="today tuesday week8tuesday"
+                ></td>
+                <td
+                  id="week8wednesdayUpper"
+                  class="today wednesday week8wednesday"
+                ></td>
+                <td
+                  id="week8thursdayUpper"
+                  class="today thursday week8thursday"
+                ></td>
+                <td id="week8fridayUpper" class="today friday week8friday"></td>
+                <td
+                  id="week8saturdayUpper"
+                  class="today saturday week8saturday"
+                ></td>
+                <td id="week8sundayUpper" class="today sunday week8sunday"></td>
+              </tr>
+              <tr class="week8">
+                <td
+                  id="week8mondayLower"
+                  class="today mondaytext week8monday"
+                ></td>
+                <td
+                  id="week8tuesdayLower"
+                  class="today tuesdaytext week8tuesday"
+                ></td>
+                <td
+                  id="week8wednesdayLower"
+                  class="today wednesdaytext week8wednesday"
+                ></td>
+                <td
+                  id="week8thursdayLower"
+                  class="today thursdaytext week8thursday"
+                ></td>
+                <td
+                  id="week8fridayLower"
+                  class="today fridaytext week8friday"
+                ></td>
+                <td
+                  id="week8saturdayLower"
+                  class="today saturdaytext week8saturday"
+                ></td>
+                <td
+                  id="week8sundayLower"
+                  class="today sundaytext week8sunday"
+                ></td>
+              </tr>
 
-						<tr class="week8">
-							<td class="rowspan" rowspan="2">8</td>
-							<td id="week8mondayUpper" class="today monday week8monday"></td>
-							<td id="week8tuesdayUpper" class="today tuesday week8tuesday"></td>
-							<td id="week8wednesdayUpper" class="today wednesday week8wednesday"></td>
-							<td id="week8thursdayUpper" class="today thursday week8thursday"></td>
-							<td id="week8fridayUpper" class="today friday week8friday"></td>
-							<td id="week8saturdayUpper" class="today saturday week8saturday"></td>
-							<td id="week8sundayUpper" class="today sunday week8sunday"></td>
-						</tr>
-						<tr class="week8">
-							<td id="week8mondayLower" class="today mondaytext week8monday"></td>
-							<td id="week8tuesdayLower" class="today tuesdaytext week8tuesday"></td>
-							<td id="week8wednesdayLower" class="today wednesdaytext week8wednesday"></td>
-							<td id="week8thursdayLower" class="today thursdaytext week8thursday"></td>
-							<td id="week8fridayLower" class="today fridaytext week8friday"></td>
-							<td id="week8saturdayLower" class="today saturdaytext week8saturday"></td>
-							<td id="week8sundayLower" class="today sundaytext week8sunday"></td>
-						</tr>
+              <tr class="week9">
+                <td class="rowspan" rowspan="2">9</td>
+                <td id="week9mondayUpper" class="today monday week9monday"></td>
+                <td
+                  id="week9tuesdayUpper"
+                  class="today tuesday week9tuesday"
+                ></td>
+                <td
+                  id="week9wednesdayUpper"
+                  class="today wednesday week9wednesday"
+                ></td>
+                <td
+                  id="week9thursdayUpper"
+                  class="today thursday week9thursday"
+                ></td>
+                <td id="week9fridayUpper" class="today friday week9friday"></td>
+                <td
+                  id="week9saturdayUpper"
+                  class="today saturday week9saturday"
+                ></td>
+                <td id="week9sundayUpper" class="today sunday week9sunday"></td>
+              </tr>
+              <tr class="week9">
+                <td
+                  id="week9mondayLower"
+                  class="today mondaytext week9monday"
+                ></td>
+                <td
+                  id="week9tuesdayLower"
+                  class="today tuesdaytext week9tuesday"
+                ></td>
+                <td
+                  id="week9wednesdayLower"
+                  class="today wednesdaytext week9wednesday"
+                ></td>
+                <td
+                  id="week9thursdayLower"
+                  class="today thursdaytext week9thursday"
+                ></td>
+                <td
+                  id="week9fridayLower"
+                  class="today fridaytext week9friday"
+                ></td>
+                <td
+                  id="week9saturdayLower"
+                  class="today saturdaytext week9saturday"
+                ></td>
+                <td
+                  id="week9sundayLower"
+                  class="today sundaytext week9sunday"
+                ></td>
+              </tr>
 
-						<tr class="week9">
-							<td class="rowspan" rowspan="2">9</td>
-							<td id="week9mondayUpper" class="today monday week9monday"></td>
-							<td id="week9tuesdayUpper" class="today tuesday week9tuesday"></td>
-							<td id="week9wednesdayUpper" class="today wednesday week9wednesday"></td>
-							<td id="week9thursdayUpper" class="today thursday week9thursday"></td>
-							<td id="week9fridayUpper" class="today friday week9friday"></td>
-							<td id="week9saturdayUpper" class="today saturday week9saturday"></td>
-							<td id="week9sundayUpper" class="today sunday week9sunday"></td>
-						</tr>
-						<tr class="week9">
-							<td id="week9mondayLower" class="today mondaytext week9monday"></td>
-							<td id="week9tuesdayLower" class="today tuesdaytext week9tuesday"></td>
-							<td id="week9wednesdayLower" class="today wednesdaytext week9wednesday"></td>
-							<td id="week9thursdayLower" class="today thursdaytext week9thursday"></td>
-							<td id="week9fridayLower" class="today fridaytext week9friday"></td>
-							<td id="week9saturdayLower" class="today saturdaytext week9saturday"></td>
-							<td id="week9sundayLower" class="today sundaytext week9sunday"></td>
-						</tr>
+              <tr class="week10">
+                <td class="rowspan" rowspan="2">10</td>
+                <td
+                  id="week10mondayUpper"
+                  class="today monday week10monday"
+                ></td>
+                <td
+                  id="week10tuesdayUpper"
+                  class="today tuesday week10tuesday"
+                ></td>
+                <td
+                  id="week10wednesdayUpper"
+                  class="today wednesday week10wednesday"
+                ></td>
+                <td
+                  id="week10thursdayUpper"
+                  class="today thursday week10thursday"
+                ></td>
+                <td
+                  id="week10fridayUpper"
+                  class="today friday week10friday"
+                ></td>
+                <td
+                  id="week10saturdayUpper"
+                  class="today saturday week10saturday"
+                ></td>
+                <td
+                  id="week10sundayUpper"
+                  class="today sunday week10sunday"
+                ></td>
+              </tr>
+              <tr class="week10">
+                <td
+                  id="week10mondayLower"
+                  class="today mondaytext week10monday"
+                ></td>
+                <td
+                  id="week10tuesdayLower"
+                  class="today tuesdaytext week10tuesday"
+                ></td>
+                <td
+                  id="week10wednesdayLower"
+                  class="today wednesdaytext week10wednesday"
+                ></td>
+                <td
+                  id="week10thursdayLower"
+                  class="today thursdaytext week10thursday"
+                ></td>
+                <td
+                  id="week10fridayLower"
+                  class="today fridaytext week10friday"
+                ></td>
+                <td
+                  id="week10saturdayLower"
+                  class="today saturdaytext week10saturday"
+                ></td>
+                <td
+                  id="week10sundayLower"
+                  class="today sundaytext week10sunday"
+                ></td>
+              </tr>
 
-						<tr class="week10">
-							<td class="rowspan" rowspan="2">10</td>
-							<td id="week10mondayUpper" class="today monday week10monday"></td>
-							<td id="week10tuesdayUpper" class="today tuesday week10tuesday"></td>
-							<td id="week10wednesdayUpper" class="today wednesday week10wednesday"></td>
-							<td id="week10thursdayUpper" class="today thursday week10thursday"></td>
-							<td id="week10fridayUpper" class="today friday week10friday"></td>
-							<td id="week10saturdayUpper" class="today saturday week10saturday"></td>
-							<td id="week10sundayUpper" class="today sunday week10sunday"></td>
-						</tr>
-						<tr class="week10">
-							<td id="week10mondayLower" class="today mondaytext week10monday"></td>
-							<td id="week10tuesdayLower" class="today tuesdaytext week10tuesday"></td>
-							<td id="week10wednesdayLower" class="today wednesdaytext week10wednesday"></td>
-							<td id="week10thursdayLower" class="today thursdaytext week10thursday"></td>
-							<td id="week10fridayLower" class="today fridaytext week10friday"></td>
-							<td id="week10saturdayLower" class="today saturdaytext week10saturday"></td>
-							<td id="week10sundayLower" class="today sundaytext week10sunday"></td>
-						</tr>
+              <tr class="week11">
+                <td class="rowspan" rowspan="2">11</td>
+                <td
+                  id="week11mondayUpper"
+                  class="today monday week11monday"
+                ></td>
+                <td
+                  id="week11tuesdayUpper"
+                  class="today tuesday week11tuesday"
+                ></td>
+                <td
+                  id="week11wednesdayUpper"
+                  class="today wednesday week11wednesday"
+                ></td>
+                <td
+                  id="week11thursdayUpper"
+                  class="today thursday week11thursday"
+                ></td>
+                <td
+                  id="week11fridayUpper"
+                  class="today friday week11friday"
+                ></td>
+                <td
+                  id="week11saturdayUpper"
+                  class="today saturday week11saturday"
+                ></td>
+                <td
+                  id="week11sundayUpper"
+                  class="today sunday week11sunday"
+                ></td>
+              </tr>
+              <tr class="week11">
+                <td
+                  id="week11mondayLower"
+                  class="today mondaytext week11monday"
+                ></td>
+                <td
+                  id="week11tuesdayLower"
+                  class="today tuesdaytext week11tuesday"
+                ></td>
+                <td
+                  id="week11wednesdayLower"
+                  class="today wednesdaytext week11wednesday"
+                ></td>
+                <td
+                  id="week11thursdayLower"
+                  class="today thursdaytext week11thursday"
+                ></td>
+                <td
+                  id="week11fridayLower"
+                  class="today fridaytext week11friday"
+                ></td>
+                <td
+                  id="week11saturdayLower"
+                  class="today saturdaytext week11saturday"
+                ></td>
+                <td
+                  id="week11sundayLower"
+                  class="today sundaytext week11sunday"
+                ></td>
+              </tr>
 
-						<tr class="week11">
-							<td class="rowspan" rowspan="2">11</td>
-							<td id="week11mondayUpper" class="today monday week11monday"></td>
-							<td id="week11tuesdayUpper" class="today tuesday week11tuesday"></td>
-							<td id="week11wednesdayUpper" class="today wednesday week11wednesday"></td>
-							<td id="week11thursdayUpper" class="today thursday week11thursday"></td>
-							<td id="week11fridayUpper" class="today friday week11friday"></td>
-							<td id="week11saturdayUpper" class="today saturday week11saturday"></td>
-							<td id="week11sundayUpper" class="today sunday week11sunday"></td>
-						</tr>
-						<tr class="week11">
-							<td id="week11mondayLower" class="today mondaytext week11monday"></td>
-							<td id="week11tuesdayLower" class="today tuesdaytext week11tuesday"></td>
-							<td id="week11wednesdayLower" class="today wednesdaytext week11wednesday"></td>
-							<td id="week11thursdayLower" class="today thursdaytext week11thursday"></td>
-							<td id="week11fridayLower" class="today fridaytext week11friday"></td>
-							<td id="week11saturdayLower" class="today saturdaytext week11saturday"></td>
-							<td id="week11sundayLower" class="today sundaytext week11sunday"></td>
-						</tr>
+              <tr class="week12">
+                <td class="rowspan" rowspan="2">12</td>
+                <td
+                  id="week12mondayUpper"
+                  class="today monday week12monday"
+                ></td>
+                <td
+                  id="week12tuesdayUpper"
+                  class="today tuesday week12tuesday"
+                ></td>
+                <td
+                  id="week12wednesdayUpper"
+                  class="today wednesday week12wednesday"
+                ></td>
+                <td
+                  id="week12thursdayUpper"
+                  class="today thursday week12thursday"
+                ></td>
+                <td
+                  id="week12fridayUpper"
+                  class="today friday week12friday"
+                ></td>
+                <td
+                  id="week12saturdayUpper"
+                  class="today saturday week12saturday"
+                ></td>
+                <td
+                  id="week12sundayUpper"
+                  class="today sunday week12sunday"
+                ></td>
+              </tr>
+              <tr class="week12">
+                <td
+                  id="week12mondayLower"
+                  class="today mondaytext week12monday"
+                ></td>
+                <td
+                  id="week12tuesdayLower"
+                  class="today tuesdaytext week12tuesday"
+                ></td>
+                <td
+                  id="week12wednesdayLower"
+                  class="today wednesdaytext week12wednesday"
+                ></td>
+                <td
+                  id="week12thursdayLower"
+                  class="today thursdaytext week12thursday"
+                ></td>
+                <td
+                  id="week12fridayLower"
+                  class="today fridaytext week12friday"
+                ></td>
+                <td
+                  id="week12saturdayLower"
+                  class="today saturdaytext week12saturday"
+                ></td>
+                <td
+                  id="week12sundayLower"
+                  class="today sundaytext week12sunday"
+                ></td>
+              </tr>
 
-						<tr class="week12">
-							<td class="rowspan" rowspan="2">12</td>
-							<td id="week12mondayUpper" class="today monday week12monday"></td>
-							<td id="week12tuesdayUpper" class="today tuesday week12tuesday"></td>
-							<td id="week12wednesdayUpper" class="today wednesday week12wednesday"></td>
-							<td id="week12thursdayUpper" class="today thursday week12thursday"></td>
-							<td id="week12fridayUpper" class="today friday week12friday"></td>
-							<td id="week12saturdayUpper" class="today saturday week12saturday"></td>
-							<td id="week12sundayUpper" class="today sunday week12sunday"></td>
-						</tr>
-						<tr class="week12">
-							<td id="week12mondayLower" class="today mondaytext week12monday"></td>
-							<td id="week12tuesdayLower" class="today tuesdaytext week12tuesday"></td>
-							<td id="week12wednesdayLower" class="today wednesdaytext week12wednesday"></td>
-							<td id="week12thursdayLower" class="today thursdaytext week12thursday"></td>
-							<td id="week12fridayLower" class="today fridaytext week12friday"></td>
-							<td id="week12saturdayLower" class="today saturdaytext week12saturday"></td>
-							<td id="week12sundayLower" class="today sundaytext week12sunday"></td>
-						</tr>
+              <tr class="week13">
+                <td class="rowspan" rowspan="2">13</td>
+                <td
+                  id="week13mondayUpper"
+                  class="today monday week13monday"
+                ></td>
+                <td
+                  id="week13tuesdayUpper"
+                  class="today tuesday week13tuesday"
+                ></td>
+                <td
+                  id="week13wednesdayUpper"
+                  class="today wednesday week13wednesday"
+                ></td>
+                <td
+                  id="week13thursdayUpper"
+                  class="today thursday week13thursday"
+                ></td>
+                <td
+                  id="week13fridayUpper"
+                  class="today friday week13friday"
+                ></td>
+                <td
+                  id="week13saturdayUpper"
+                  class="today saturday week13saturday"
+                ></td>
+                <td
+                  id="week13sundayUpper"
+                  class="today sunday week13sunday"
+                ></td>
+              </tr>
+              <tr class="week13">
+                <td
+                  id="week13mondayLower"
+                  class="today mondaytext week13monday"
+                ></td>
+                <td
+                  id="week13tuesdayLower"
+                  class="today tuesdaytext week13tuesday"
+                ></td>
+                <td
+                  id="week13wednesdayLower"
+                  class="today wednesdaytext week13wednesday"
+                ></td>
+                <td
+                  id="week13thursdayLower"
+                  class="today thursdaytext week13thursday"
+                ></td>
+                <td
+                  id="week13fridayLower"
+                  class="today fridaytext week13friday"
+                ></td>
+                <td
+                  id="week13saturdayLower"
+                  class="today saturdaytext week13saturday"
+                ></td>
+                <td
+                  id="week13sundayLower"
+                  class="today sundaytext week13sunday"
+                ></td>
+              </tr>
+            </tbody>
 
-						<tr class="week13">
-							<td class="rowspan" rowspan="2">13</td>
-							<td id="week13mondayUpper" class="today monday week13monday"></td>
-							<td id="week13tuesdayUpper" class="today tuesday week13tuesday"></td>
-							<td id="week13wednesdayUpper" class="today wednesday week13wednesday"></td>
-							<td id="week13thursdayUpper" class="today thursday week13thursday"></td>
-							<td id="week13fridayUpper" class="today friday week13friday"></td>
-							<td id="week13saturdayUpper" class="today saturday week13saturday"></td>
-							<td id="week13sundayUpper" class="today sunday week13sunday"></td>
-						</tr>
-						<tr class="week13">
-							<td id="week13mondayLower" class="today mondaytext week13monday"></td>
-							<td id="week13tuesdayLower" class="today tuesdaytext week13tuesday"></td>
-							<td id="week13wednesdayLower" class="today wednesdaytext week13wednesday"></td>
-							<td id="week13thursdayLower" class="today thursdaytext week13thursday"></td>
-							<td id="week13fridayLower" class="today fridaytext week13friday"></td>
-							<td id="week13saturdayLower" class="today saturdaytext week13saturday"></td>
-							<td id="week13sundayLower" class="today sundaytext week13sunday"></td>
-						</tr>
+            <tbody id="table-6-months" class="table-bg">
+              <tr class="week14">
+                <td class="rowspan" rowspan="2">14</td>
+                <td
+                  id="week14mondayUpper"
+                  class="today monday week14monday"
+                ></td>
+                <td
+                  id="week14tuesdayUpper"
+                  class="today tuesday week14tuesday"
+                ></td>
+                <td
+                  id="week14wednesdayUpper"
+                  class="today wednesday week14wednesday"
+                ></td>
+                <td
+                  id="week14thursdayUpper"
+                  class="today thursday week14thursday"
+                ></td>
+                <td
+                  id="week14fridayUpper"
+                  class="today friday week14friday"
+                ></td>
+                <td
+                  id="week14saturdayUpper"
+                  class="today saturday week14saturday"
+                ></td>
+                <td
+                  id="week14sundayUpper"
+                  class="today sunday week14sunday"
+                ></td>
+              </tr>
+              <tr class="week14">
+                <td
+                  id="week14mondayLower"
+                  class="today mondaytext week14monday"
+                ></td>
+                <td
+                  id="week14tuesdayLower"
+                  class="today tuesdaytext week14tuesday"
+                ></td>
+                <td
+                  id="week14wednesdayLower"
+                  class="today wednesdaytext week14wednesday"
+                ></td>
+                <td
+                  id="week14thursdayLower"
+                  class="today thursdaytext week14thursday"
+                ></td>
+                <td
+                  id="week14fridayLower"
+                  class="today fridaytext week14friday"
+                ></td>
+                <td
+                  id="week14saturdayLower"
+                  class="today saturdaytext week14saturday"
+                ></td>
+                <td
+                  id="week14sundayLower"
+                  class="today sundaytext week14sunday"
+                ></td>
+              </tr>
 
-					</tbody>
+              <tr class="week15">
+                <td class="rowspan" rowspan="2">15</td>
+                <td
+                  id="week15mondayUpper"
+                  class="today monday week15monday"
+                ></td>
+                <td
+                  id="week15tuesdayUpper"
+                  class="today tuesday week15tuesday"
+                ></td>
+                <td
+                  id="week15wednesdayUpper"
+                  class="today wednesday week15wednesday"
+                ></td>
+                <td
+                  id="week15thursdayUpper"
+                  class="today thursday week15thursday"
+                ></td>
+                <td
+                  id="week15fridayUpper"
+                  class="today friday week15friday"
+                ></td>
+                <td
+                  id="week15saturdayUpper"
+                  class="today saturday week15saturday"
+                ></td>
+                <td
+                  id="week15sundayUpper"
+                  class="today sunday week15sunday"
+                ></td>
+              </tr>
+              <tr class="week15">
+                <td
+                  id="week15mondayLower"
+                  class="today mondaytext week15monday"
+                ></td>
+                <td
+                  id="week15tuesdayLower"
+                  class="today tuesdaytext week15tuesday"
+                ></td>
+                <td
+                  id="week15wednesdayLower"
+                  class="today wednesdaytext week15wednesday"
+                ></td>
+                <td
+                  id="week15thursdayLower"
+                  class="today thursdaytext week15thursday"
+                ></td>
+                <td
+                  id="week15fridayLower"
+                  class="today fridaytext week15friday"
+                ></td>
+                <td
+                  id="week15saturdayLower"
+                  class="today saturdaytext week15saturday"
+                ></td>
+                <td
+                  id="week15sundayLower"
+                  class="today sundaytext week15sunday"
+                ></td>
+              </tr>
 
-					<tbody id="table-6-months" class="table-bg">
+              <tr class="week16">
+                <td class="rowspan" rowspan="2">16</td>
+                <td
+                  id="week16mondayUpper"
+                  class="today monday week16monday"
+                ></td>
+                <td
+                  id="week16tuesdayUpper"
+                  class="today tuesday week16tuesday"
+                ></td>
+                <td
+                  id="week16wednesdayUpper"
+                  class="today wednesday week16wednesday"
+                ></td>
+                <td
+                  id="week16thursdayUpper"
+                  class="today thursday week16thursday"
+                ></td>
+                <td
+                  id="week16fridayUpper"
+                  class="today friday week16friday"
+                ></td>
+                <td
+                  id="week16saturdayUpper"
+                  class="today saturday week16saturday"
+                ></td>
+                <td
+                  id="week16sundayUpper"
+                  class="today sunday week16sunday"
+                ></td>
+              </tr>
+              <tr class="week16">
+                <td
+                  id="week16mondayLower"
+                  class="today mondaytext week16monday"
+                ></td>
+                <td
+                  id="week16tuesdayLower"
+                  class="today tuesdaytext week16tuesday"
+                ></td>
+                <td
+                  id="week16wednesdayLower"
+                  class="today wednesdaytext week16wednesday"
+                ></td>
+                <td
+                  id="week16thursdayLower"
+                  class="today thursdaytext week16thursday"
+                ></td>
+                <td
+                  id="week16fridayLower"
+                  class="today fridaytext week16friday"
+                ></td>
+                <td
+                  id="week16saturdayLower"
+                  class="today saturdaytext week16saturday"
+                ></td>
+                <td
+                  id="week16sundayLower"
+                  class="today sundaytext week16sunday"
+                ></td>
+              </tr>
 
-						<tr class="week14">
-							<td class="rowspan" rowspan="2">14</td>
-							<td id="week14mondayUpper" class="today monday week14monday"></td>
-							<td id="week14tuesdayUpper" class="today tuesday week14tuesday"></td>
-							<td id="week14wednesdayUpper" class="today wednesday week14wednesday"></td>
-							<td id="week14thursdayUpper" class="today thursday week14thursday"></td>
-							<td id="week14fridayUpper" class="today friday week14friday"></td>
-							<td id="week14saturdayUpper" class="today saturday week14saturday"></td>
-							<td id="week14sundayUpper" class="today sunday week14sunday"></td>
-						</tr>
-						<tr class="week14">
-							<td id="week14mondayLower" class="today mondaytext week14monday"></td>
-							<td id="week14tuesdayLower" class="today tuesdaytext week14tuesday"></td>
-							<td id="week14wednesdayLower" class="today wednesdaytext week14wednesday"></td>
-							<td id="week14thursdayLower" class="today thursdaytext week14thursday"></td>
-							<td id="week14fridayLower" class="today fridaytext week14friday"></td>
-							<td id="week14saturdayLower" class="today saturdaytext week14saturday"></td>
-							<td id="week14sundayLower" class="today sundaytext week14sunday"></td>
-						</tr>
+              <tr class="week17">
+                <td class="rowspan" rowspan="2">17</td>
+                <td
+                  id="week17mondayUpper"
+                  class="today monday week17monday"
+                ></td>
+                <td
+                  id="week17tuesdayUpper"
+                  class="today tuesday week17tuesday"
+                ></td>
+                <td
+                  id="week17wednesdayUpper"
+                  class="today wednesday week17wednesday"
+                ></td>
+                <td
+                  id="week17thursdayUpper"
+                  class="today thursday week17thursday"
+                ></td>
+                <td
+                  id="week17fridayUpper"
+                  class="today friday week17friday"
+                ></td>
+                <td
+                  id="week17saturdayUpper"
+                  class="today saturday week17saturday"
+                ></td>
+                <td
+                  id="week17sundayUpper"
+                  class="today sunday week17sunday"
+                ></td>
+              </tr>
+              <tr class="week17">
+                <td
+                  id="week17mondayLower"
+                  class="today mondaytext week17monday"
+                ></td>
+                <td
+                  id="week17tuesdayLower"
+                  class="today tuesdaytext week17tuesday"
+                ></td>
+                <td
+                  id="week17wednesdayLower"
+                  class="today wednesdaytext week17wednesday"
+                ></td>
+                <td
+                  id="week17thursdayLower"
+                  class="today thursdaytext week17thursday"
+                ></td>
+                <td
+                  id="week17fridayLower"
+                  class="today fridaytext week17friday"
+                ></td>
+                <td
+                  id="week17saturdayLower"
+                  class="today saturdaytext week17saturday"
+                ></td>
+                <td
+                  id="week17sundayLower"
+                  class="today sundaytext week17sunday"
+                ></td>
+              </tr>
 
-						<tr class="week15">
-							<td class="rowspan" rowspan="2">15</td>
-							<td id="week15mondayUpper" class="today monday week15monday"></td>
-							<td id="week15tuesdayUpper" class="today tuesday week15tuesday"></td>
-							<td id="week15wednesdayUpper" class="today wednesday week15wednesday"></td>
-							<td id="week15thursdayUpper" class="today thursday week15thursday"></td>
-							<td id="week15fridayUpper" class="today friday week15friday"></td>
-							<td id="week15saturdayUpper" class="today saturday week15saturday"></td>
-							<td id="week15sundayUpper" class="today sunday week15sunday"></td>
-						</tr>
-						<tr class="week15">
-							<td id="week15mondayLower" class="today mondaytext week15monday"></td>
-							<td id="week15tuesdayLower" class="today tuesdaytext week15tuesday"></td>
-							<td id="week15wednesdayLower" class="today wednesdaytext week15wednesday"></td>
-							<td id="week15thursdayLower" class="today thursdaytext week15thursday"></td>
-							<td id="week15fridayLower" class="today fridaytext week15friday"></td>
-							<td id="week15saturdayLower" class="today saturdaytext week15saturday"></td>
-							<td id="week15sundayLower" class="today sundaytext week15sunday"></td>
-						</tr>
+              <tr class="week18">
+                <td class="rowspan" rowspan="2">18</td>
+                <td
+                  id="week18mondayUpper"
+                  class="today monday week18monday"
+                ></td>
+                <td
+                  id="week18tuesdayUpper"
+                  class="today tuesday week18tuesday"
+                ></td>
+                <td
+                  id="week18wednesdayUpper"
+                  class="today wednesday week18wednesday"
+                ></td>
+                <td
+                  id="week18thursdayUpper"
+                  class="today thursday week18thursday"
+                ></td>
+                <td
+                  id="week18fridayUpper"
+                  class="today friday week18friday"
+                ></td>
+                <td
+                  id="week18saturdayUpper"
+                  class="today saturday week18saturday"
+                ></td>
+                <td
+                  id="week18sundayUpper"
+                  class="today sunday week18sunday"
+                ></td>
+              </tr>
+              <tr class="week18">
+                <td
+                  id="week18mondayLower"
+                  class="today mondaytext week18monday"
+                ></td>
+                <td
+                  id="week18tuesdayLower"
+                  class="today tuesdaytext week18tuesday"
+                ></td>
+                <td
+                  id="week18wednesdayLower"
+                  class="today wednesdaytext week18wednesday"
+                ></td>
+                <td
+                  id="week18thursdayLower"
+                  class="today thursdaytext week18thursday"
+                ></td>
+                <td
+                  id="week18fridayLower"
+                  class="today fridaytext week18friday"
+                ></td>
+                <td
+                  id="week18saturdayLower"
+                  class="today saturdaytext week18saturday"
+                ></td>
+                <td
+                  id="week18sundayLower"
+                  class="today sundaytext week18sunday"
+                ></td>
+              </tr>
 
-						<tr class="week16">
-							<td class="rowspan" rowspan="2">16</td>
-							<td id="week16mondayUpper" class="today monday week16monday"></td>
-							<td id="week16tuesdayUpper" class="today tuesday week16tuesday"></td>
-							<td id="week16wednesdayUpper" class="today wednesday week16wednesday"></td>
-							<td id="week16thursdayUpper" class="today thursday week16thursday"></td>
-							<td id="week16fridayUpper" class="today friday week16friday"></td>
-							<td id="week16saturdayUpper" class="today saturday week16saturday"></td>
-							<td id="week16sundayUpper" class="today sunday week16sunday"></td>
-						</tr>
-						<tr class="week16">
-							<td id="week16mondayLower" class="today mondaytext week16monday"></td>
-							<td id="week16tuesdayLower" class="today tuesdaytext week16tuesday"></td>
-							<td id="week16wednesdayLower" class="today wednesdaytext week16wednesday"></td>
-							<td id="week16thursdayLower" class="today thursdaytext week16thursday"></td>
-							<td id="week16fridayLower" class="today fridaytext week16friday"></td>
-							<td id="week16saturdayLower" class="today saturdaytext week16saturday"></td>
-							<td id="week16sundayLower" class="today sundaytext week16sunday"></td>
-						</tr>
+              <tr class="week19">
+                <td class="rowspan" rowspan="2">19</td>
+                <td
+                  id="week19mondayUpper"
+                  class="today monday week19monday"
+                ></td>
+                <td
+                  id="week19tuesdayUpper"
+                  class="today tuesday week19tuesday"
+                ></td>
+                <td
+                  id="week19wednesdayUpper"
+                  class="today wednesday week19wednesday"
+                ></td>
+                <td
+                  id="week19thursdayUpper"
+                  class="today thursday week19thursday"
+                ></td>
+                <td
+                  id="week19fridayUpper"
+                  class="today friday week19friday"
+                ></td>
+                <td
+                  id="week19saturdayUpper"
+                  class="today saturday week19saturday"
+                ></td>
+                <td
+                  id="week19sundayUpper"
+                  class="today sunday week19sunday"
+                ></td>
+              </tr>
+              <tr class="week19">
+                <td
+                  id="week19mondayLower"
+                  class="today mondaytext week19monday"
+                ></td>
+                <td
+                  id="week19tuesdayLower"
+                  class="today tuesdaytext week19tuesday"
+                ></td>
+                <td
+                  id="week19wednesdayLower"
+                  class="today wednesdaytext week19wednesday"
+                ></td>
+                <td
+                  id="week19thursdayLower"
+                  class="today thursdaytext week19thursday"
+                ></td>
+                <td
+                  id="week19fridayLower"
+                  class="today fridaytext week19friday"
+                ></td>
+                <td
+                  id="week19saturdayLower"
+                  class="today saturdaytext week19saturday"
+                ></td>
+                <td
+                  id="week19sundayLower"
+                  class="today sundaytext week19sunday"
+                ></td>
+              </tr>
 
-						<tr class="week17">
-							<td class="rowspan" rowspan="2">17</td>
-							<td id="week17mondayUpper" class="today monday week17monday"></td>
-							<td id="week17tuesdayUpper" class="today tuesday week17tuesday"></td>
-							<td id="week17wednesdayUpper" class="today wednesday week17wednesday"></td>
-							<td id="week17thursdayUpper" class="today thursday week17thursday"></td>
-							<td id="week17fridayUpper" class="today friday week17friday"></td>
-							<td id="week17saturdayUpper" class="today saturday week17saturday"></td>
-							<td id="week17sundayUpper" class="today sunday week17sunday"></td>
-						</tr>
-						<tr class="week17">
-							<td id="week17mondayLower" class="today mondaytext week17monday"></td>
-							<td id="week17tuesdayLower" class="today tuesdaytext week17tuesday"></td>
-							<td id="week17wednesdayLower" class="today wednesdaytext week17wednesday"></td>
-							<td id="week17thursdayLower" class="today thursdaytext week17thursday"></td>
-							<td id="week17fridayLower" class="today fridaytext week17friday"></td>
-							<td id="week17saturdayLower" class="today saturdaytext week17saturday"></td>
-							<td id="week17sundayLower" class="today sundaytext week17sunday"></td>
-						</tr>
+              <tr class="week20">
+                <td class="rowspan" rowspan="2">20</td>
+                <td
+                  id="week20mondayUpper"
+                  class="today monday week20monday"
+                ></td>
+                <td
+                  id="week20tuesdayUpper"
+                  class="today tuesday week20tuesday"
+                ></td>
+                <td
+                  id="week20wednesdayUpper"
+                  class="today wednesday week20wednesday"
+                ></td>
+                <td
+                  id="week20thursdayUpper"
+                  class="today thursday week20thursday"
+                ></td>
+                <td
+                  id="week20fridayUpper"
+                  class="today friday week20friday"
+                ></td>
+                <td
+                  id="week20saturdayUpper"
+                  class="today saturday week20saturday"
+                ></td>
+                <td
+                  id="week20sundayUpper"
+                  class="today sunday week20sunday"
+                ></td>
+              </tr>
+              <tr class="week20">
+                <td
+                  id="week20mondayLower"
+                  class="today mondaytext week20monday"
+                ></td>
+                <td
+                  id="week20tuesdayLower"
+                  class="today tuesdaytext week20tuesday"
+                ></td>
+                <td
+                  id="week20wednesdayLower"
+                  class="today wednesdaytext week20wednesday"
+                ></td>
+                <td
+                  id="week20thursdayLower"
+                  class="today thursdaytext week20thursday"
+                ></td>
+                <td
+                  id="week20fridayLower"
+                  class="today fridaytext week20friday"
+                ></td>
+                <td
+                  id="week20saturdayLower"
+                  class="today saturdaytext week20saturday"
+                ></td>
+                <td
+                  id="week20sundayLower"
+                  class="today sundaytext week20sunday"
+                ></td>
+              </tr>
 
-						<tr class="week18">
-							<td class="rowspan" rowspan="2">18</td>
-							<td id="week18mondayUpper" class="today monday week18monday"></td>
-							<td id="week18tuesdayUpper" class="today tuesday week18tuesday"></td>
-							<td id="week18wednesdayUpper" class="today wednesday week18wednesday"></td>
-							<td id="week18thursdayUpper" class="today thursday week18thursday"></td>
-							<td id="week18fridayUpper" class="today friday week18friday"></td>
-							<td id="week18saturdayUpper" class="today saturday week18saturday"></td>
-							<td id="week18sundayUpper" class="today sunday week18sunday"></td>
-						</tr>
-						<tr class="week18">
-							<td id="week18mondayLower" class="today mondaytext week18monday"></td>
-							<td id="week18tuesdayLower" class="today tuesdaytext week18tuesday"></td>
-							<td id="week18wednesdayLower" class="today wednesdaytext week18wednesday"></td>
-							<td id="week18thursdayLower" class="today thursdaytext week18thursday"></td>
-							<td id="week18fridayLower" class="today fridaytext week18friday"></td>
-							<td id="week18saturdayLower" class="today saturdaytext week18saturday"></td>
-							<td id="week18sundayLower" class="today sundaytext week18sunday"></td>
-						</tr>
+              <tr class="week21">
+                <td class="rowspan" rowspan="2">21</td>
+                <td
+                  id="week21mondayUpper"
+                  class="today monday week21monday"
+                ></td>
+                <td
+                  id="week21tuesdayUpper"
+                  class="today tuesday week21tuesday"
+                ></td>
+                <td
+                  id="week21wednesdayUpper"
+                  class="today wednesday week21wednesday"
+                ></td>
+                <td
+                  id="week21thursdayUpper"
+                  class="today thursday week21thursday"
+                ></td>
+                <td
+                  id="week21fridayUpper"
+                  class="today friday week21friday"
+                ></td>
+                <td
+                  id="week21saturdayUpper"
+                  class="today saturday week21saturday"
+                ></td>
+                <td
+                  id="week21sundayUpper"
+                  class="today sunday week21sunday"
+                ></td>
+              </tr>
+              <tr class="week21">
+                <td
+                  id="week21mondayLower"
+                  class="today mondaytext week21monday"
+                ></td>
+                <td
+                  id="week21tuesdayLower"
+                  class="today tuesdaytext week21tuesday"
+                ></td>
+                <td
+                  id="week21wednesdayLower"
+                  class="today wednesdaytext week21wednesday"
+                ></td>
+                <td
+                  id="week21thursdayLower"
+                  class="today thursdaytext week21thursday"
+                ></td>
+                <td
+                  id="week21fridayLower"
+                  class="today fridaytext week21friday"
+                ></td>
+                <td
+                  id="week21saturdayLower"
+                  class="today saturdaytext week21saturday"
+                ></td>
+                <td
+                  id="week21sundayLower"
+                  class="today sundaytext week21sunday"
+                ></td>
+              </tr>
 
-						<tr class="week19">
-							<td class="rowspan" rowspan="2">19</td>
-							<td id="week19mondayUpper" class="today monday week19monday"></td>
-							<td id="week19tuesdayUpper" class="today tuesday week19tuesday"></td>
-							<td id="week19wednesdayUpper" class="today wednesday week19wednesday"></td>
-							<td id="week19thursdayUpper" class="today thursday week19thursday"></td>
-							<td id="week19fridayUpper" class="today friday week19friday"></td>
-							<td id="week19saturdayUpper" class="today saturday week19saturday"></td>
-							<td id="week19sundayUpper" class="today sunday week19sunday"></td>
-						</tr>
-						<tr class="week19">
-							<td id="week19mondayLower" class="today mondaytext week19monday"></td>
-							<td id="week19tuesdayLower" class="today tuesdaytext week19tuesday"></td>
-							<td id="week19wednesdayLower" class="today wednesdaytext week19wednesday"></td>
-							<td id="week19thursdayLower" class="today thursdaytext week19thursday"></td>
-							<td id="week19fridayLower" class="today fridaytext week19friday"></td>
-							<td id="week19saturdayLower" class="today saturdaytext week19saturday"></td>
-							<td id="week19sundayLower" class="today sundaytext week19sunday"></td>
-						</tr>
+              <tr class="week22">
+                <td class="rowspan" rowspan="2">22</td>
+                <td
+                  id="week22mondayUpper"
+                  class="today monday week22monday"
+                ></td>
+                <td
+                  id="week22tuesdayUpper"
+                  class="today tuesday week22tuesday"
+                ></td>
+                <td
+                  id="week22wednesdayUpper"
+                  class="today wednesday week22wednesday"
+                ></td>
+                <td
+                  id="week22thursdayUpper"
+                  class="today thursday week22thursday"
+                ></td>
+                <td
+                  id="week22fridayUpper"
+                  class="today friday week22friday"
+                ></td>
+                <td
+                  id="week22saturdayUpper"
+                  class="today saturday week22saturday"
+                ></td>
+                <td
+                  id="week22sundayUpper"
+                  class="today sunday week22sunday"
+                ></td>
+              </tr>
+              <tr class="week22">
+                <td
+                  id="week22mondayLower"
+                  class="today mondaytext week22monday"
+                ></td>
+                <td
+                  id="week22tuesdayLower"
+                  class="today tuesdaytext week22tuesday"
+                ></td>
+                <td
+                  id="week22wednesdayLower"
+                  class="today wednesdaytext week22wednesday"
+                ></td>
+                <td
+                  id="week22thursdayLower"
+                  class="today thursdaytext week22thursday"
+                ></td>
+                <td
+                  id="week22fridayLower"
+                  class="today fridaytext week22friday"
+                ></td>
+                <td
+                  id="week22saturdayLower"
+                  class="today saturdaytext week22saturday"
+                ></td>
+                <td
+                  id="week22sundayLower"
+                  class="today sundaytext week22sunday"
+                ></td>
+              </tr>
 
-						<tr class="week20">
-							<td class="rowspan" rowspan="2">20</td>
-							<td id="week20mondayUpper" class="today monday week20monday"></td>
-							<td id="week20tuesdayUpper" class="today tuesday week20tuesday"></td>
-							<td id="week20wednesdayUpper" class="today wednesday week20wednesday"></td>
-							<td id="week20thursdayUpper" class="today thursday week20thursday"></td>
-							<td id="week20fridayUpper" class="today friday week20friday"></td>
-							<td id="week20saturdayUpper" class="today saturday week20saturday"></td>
-							<td id="week20sundayUpper" class="today sunday week20sunday"></td>
-						</tr>
-						<tr class="week20">
-							<td id="week20mondayLower" class="today mondaytext week20monday"></td>
-							<td id="week20tuesdayLower" class="today tuesdaytext week20tuesday"></td>
-							<td id="week20wednesdayLower" class="today wednesdaytext week20wednesday"></td>
-							<td id="week20thursdayLower" class="today thursdaytext week20thursday"></td>
-							<td id="week20fridayLower" class="today fridaytext week20friday"></td>
-							<td id="week20saturdayLower" class="today saturdaytext week20saturday"></td>
-							<td id="week20sundayLower" class="today sundaytext week20sunday"></td>
-						</tr>
+              <tr class="week23">
+                <td class="rowspan" rowspan="2">23</td>
+                <td
+                  id="week23mondayUpper"
+                  class="today monday week23monday"
+                ></td>
+                <td
+                  id="week23tuesdayUpper"
+                  class="today tuesday week23tuesday"
+                ></td>
+                <td
+                  id="week23wednesdayUpper"
+                  class="today wednesday week23wednesday"
+                ></td>
+                <td
+                  id="week23thursdayUpper"
+                  class="today thursday week23thursday"
+                ></td>
+                <td
+                  id="week23fridayUpper"
+                  class="today friday week23friday"
+                ></td>
+                <td
+                  id="week23saturdayUpper"
+                  class="today saturday week23saturday"
+                ></td>
+                <td
+                  id="week23sundayUpper"
+                  class="today sunday week23sunday"
+                ></td>
+              </tr>
+              <tr class="week23">
+                <td
+                  id="week23mondayLower"
+                  class="today mondaytext week23monday"
+                ></td>
+                <td
+                  id="week23tuesdayLower"
+                  class="today tuesdaytext week23tuesday"
+                ></td>
+                <td
+                  id="week23wednesdayLower"
+                  class="today wednesdaytext week23wednesday"
+                ></td>
+                <td
+                  id="week23thursdayLower"
+                  class="today thursdaytext week23thursday"
+                ></td>
+                <td
+                  id="week23fridayLower"
+                  class="today fridaytext week23friday"
+                ></td>
+                <td
+                  id="week23saturdayLower"
+                  class="today saturdaytext week23saturday"
+                ></td>
+                <td
+                  id="week23sundayLower"
+                  class="today sundaytext week23sunday"
+                ></td>
+              </tr>
 
-						<tr class="week21">
-							<td class="rowspan" rowspan="2">21</td>
-							<td id="week21mondayUpper" class="today monday week21monday"></td>
-							<td id="week21tuesdayUpper" class="today tuesday week21tuesday"></td>
-							<td id="week21wednesdayUpper" class="today wednesday week21wednesday"></td>
-							<td id="week21thursdayUpper" class="today thursday week21thursday"></td>
-							<td id="week21fridayUpper" class="today friday week21friday"></td>
-							<td id="week21saturdayUpper" class="today saturday week21saturday"></td>
-							<td id="week21sundayUpper" class="today sunday week21sunday"></td>
-						</tr>
-						<tr class="week21">
-							<td id="week21mondayLower" class="today mondaytext week21monday"></td>
-							<td id="week21tuesdayLower" class="today tuesdaytext week21tuesday"></td>
-							<td id="week21wednesdayLower" class="today wednesdaytext week21wednesday"></td>
-							<td id="week21thursdayLower" class="today thursdaytext week21thursday"></td>
-							<td id="week21fridayLower" class="today fridaytext week21friday"></td>
-							<td id="week21saturdayLower" class="today saturdaytext week21saturday"></td>
-							<td id="week21sundayLower" class="today sundaytext week21sunday"></td>
-						</tr>
+              <tr class="week24">
+                <td class="rowspan" rowspan="2">24</td>
+                <td
+                  id="week24mondayUpper"
+                  class="today monday week24monday"
+                ></td>
+                <td
+                  id="week24tuesdayUpper"
+                  class="today tuesday week24tuesday"
+                ></td>
+                <td
+                  id="week24wednesdayUpper"
+                  class="today wednesday week24wednesday"
+                ></td>
+                <td
+                  id="week24thursdayUpper"
+                  class="today thursday week24thursday"
+                ></td>
+                <td
+                  id="week24fridayUpper"
+                  class="today friday week24friday"
+                ></td>
+                <td
+                  id="week24saturdayUpper"
+                  class="today saturday week24saturday"
+                ></td>
+                <td
+                  id="week24sundayUpper"
+                  class="today sunday week24sunday"
+                ></td>
+              </tr>
+              <tr class="week24">
+                <td
+                  id="week24mondayLower"
+                  class="today mondaytext week24monday"
+                ></td>
+                <td
+                  id="week24tuesdayLower"
+                  class="today tuesdaytext week24tuesday"
+                ></td>
+                <td
+                  id="week24wednesdayLower"
+                  class="today wednesdaytext week24wednesday"
+                ></td>
+                <td
+                  id="week24thursdayLower"
+                  class="today thursdaytext week24thursday"
+                ></td>
+                <td
+                  id="week24fridayLower"
+                  class="today fridaytext week24friday"
+                ></td>
+                <td
+                  id="week24saturdayLower"
+                  class="today saturdaytext week24saturday"
+                ></td>
+                <td
+                  id="week24sundayLower"
+                  class="today sundaytext week24sunday"
+                ></td>
+              </tr>
 
-						<tr class="week22">
-							<td class="rowspan" rowspan="2">22</td>
-							<td id="week22mondayUpper" class="today monday week22monday"></td>
-							<td id="week22tuesdayUpper" class="today tuesday week22tuesday"></td>
-							<td id="week22wednesdayUpper" class="today wednesday week22wednesday"></td>
-							<td id="week22thursdayUpper" class="today thursday week22thursday"></td>
-							<td id="week22fridayUpper" class="today friday week22friday"></td>
-							<td id="week22saturdayUpper" class="today saturday week22saturday"></td>
-							<td id="week22sundayUpper" class="today sunday week22sunday"></td>
-						</tr>
-						<tr class="week22">
-							<td id="week22mondayLower" class="today mondaytext week22monday"></td>
-							<td id="week22tuesdayLower" class="today tuesdaytext week22tuesday"></td>
-							<td id="week22wednesdayLower" class="today wednesdaytext week22wednesday"></td>
-							<td id="week22thursdayLower" class="today thursdaytext week22thursday"></td>
-							<td id="week22fridayLower" class="today fridaytext week22friday"></td>
-							<td id="week22saturdayLower" class="today saturdaytext week22saturday"></td>
-							<td id="week22sundayLower" class="today sundaytext week22sunday"></td>
-						</tr>
+              <tr class="week25">
+                <td class="rowspan" rowspan="2">25</td>
+                <td
+                  id="week25mondayUpper"
+                  class="today monday week25monday"
+                ></td>
+                <td
+                  id="week25tuesdayUpper"
+                  class="today tuesday week25tuesday"
+                ></td>
+                <td
+                  id="week25wednesdayUpper"
+                  class="today wednesday week25wednesday"
+                ></td>
+                <td
+                  id="week25thursdayUpper"
+                  class="today thursday week25thursday"
+                ></td>
+                <td
+                  id="week25fridayUpper"
+                  class="today friday week25friday"
+                ></td>
+                <td
+                  id="week25saturdayUpper"
+                  class="today saturday week25saturday"
+                ></td>
+                <td
+                  id="week25sundayUpper"
+                  class="today sunday week25sunday"
+                ></td>
+              </tr>
+              <tr class="week25">
+                <td
+                  id="week25mondayLower"
+                  class="today mondaytext week25monday"
+                ></td>
+                <td
+                  id="week25tuesdayLower"
+                  class="today tuesdaytext week25tuesday"
+                ></td>
+                <td
+                  id="week25wednesdayLower"
+                  class="today wednesdaytext week25wednesday"
+                ></td>
+                <td
+                  id="week25thursdayLower"
+                  class="today thursdaytext week25thursday"
+                ></td>
+                <td
+                  id="week25fridayLower"
+                  class="today fridaytext week25friday"
+                ></td>
+                <td
+                  id="week25saturdayLower"
+                  class="today saturdaytext week25saturday"
+                ></td>
+                <td
+                  id="week25sundayLower"
+                  class="today sundaytext week25sunday"
+                ></td>
+              </tr>
 
-						<tr class="week23">
-							<td class="rowspan" rowspan="2">23</td>
-							<td id="week23mondayUpper" class="today monday week23monday"></td>
-							<td id="week23tuesdayUpper" class="today tuesday week23tuesday"></td>
-							<td id="week23wednesdayUpper" class="today wednesday week23wednesday"></td>
-							<td id="week23thursdayUpper" class="today thursday week23thursday"></td>
-							<td id="week23fridayUpper" class="today friday week23friday"></td>
-							<td id="week23saturdayUpper" class="today saturday week23saturday"></td>
-							<td id="week23sundayUpper" class="today sunday week23sunday"></td>
-						</tr>
-						<tr class="week23">
-							<td id="week23mondayLower" class="today mondaytext week23monday"></td>
-							<td id="week23tuesdayLower" class="today tuesdaytext week23tuesday"></td>
-							<td id="week23wednesdayLower" class="today wednesdaytext week23wednesday"></td>
-							<td id="week23thursdayLower" class="today thursdaytext week23thursday"></td>
-							<td id="week23fridayLower" class="today fridaytext week23friday"></td>
-							<td id="week23saturdayLower" class="today saturdaytext week23saturday"></td>
-							<td id="week23sundayLower" class="today sundaytext week23sunday"></td>
-						</tr>
+              <tr class="week26">
+                <td class="rowspan" rowspan="2">26</td>
+                <td
+                  id="week26mondayUpper"
+                  class="today monday week26monday"
+                ></td>
+                <td
+                  id="week26tuesdayUpper"
+                  class="today tuesday week26tuesday"
+                ></td>
+                <td
+                  id="week26wednesdayUpper"
+                  class="today wednesday week26wednesday"
+                ></td>
+                <td
+                  id="week26thursdayUpper"
+                  class="today thursday week26thursday"
+                ></td>
+                <td
+                  id="week26fridayUpper"
+                  class="today friday week26friday"
+                ></td>
+                <td
+                  id="week26saturdayUpper"
+                  class="today saturday week26saturday"
+                ></td>
+                <td
+                  id="week26sundayUpper"
+                  class="today sunday week26sunday"
+                ></td>
+              </tr>
+              <tr class="week26">
+                <td
+                  id="week26mondayLower"
+                  class="today mondaytext week26monday"
+                ></td>
+                <td
+                  id="week26tuesdayLower"
+                  class="today tuesdaytext week26tuesday"
+                ></td>
+                <td
+                  id="week26wednesdayLower"
+                  class="today wednesdaytext week26wednesday"
+                ></td>
+                <td
+                  id="week26thursdayLower"
+                  class="today thursdaytext week26thursday"
+                ></td>
+                <td
+                  id="week26fridayLower"
+                  class="today fridaytext week26friday"
+                ></td>
+                <td
+                  id="week26saturdayLower"
+                  class="today saturdaytext week26saturday"
+                ></td>
+                <td
+                  id="week26sundayLower"
+                  class="today sundaytext week26sunday"
+                ></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-						<tr class="week24">
-							<td class="rowspan" rowspan="2">24</td>
-							<td id="week24mondayUpper" class="today monday week24monday"></td>
-							<td id="week24tuesdayUpper" class="today tuesday week24tuesday"></td>
-							<td id="week24wednesdayUpper" class="today wednesday week24wednesday"></td>
-							<td id="week24thursdayUpper" class="today thursday week24thursday"></td>
-							<td id="week24fridayUpper" class="today friday week24friday"></td>
-							<td id="week24saturdayUpper" class="today saturday week24saturday"></td>
-							<td id="week24sundayUpper" class="today sunday week24sunday"></td>
-						</tr>
-						<tr class="week24">
-							<td id="week24mondayLower" class="today mondaytext week24monday"></td>
-							<td id="week24tuesdayLower" class="today tuesdaytext week24tuesday"></td>
-							<td id="week24wednesdayLower" class="today wednesdaytext week24wednesday"></td>
-							<td id="week24thursdayLower" class="today thursdaytext week24thursday"></td>
-							<td id="week24fridayLower" class="today fridaytext week24friday"></td>
-							<td id="week24saturdayLower" class="today saturdaytext week24saturday"></td>
-							<td id="week24sundayLower" class="today sundaytext week24sunday"></td>
-						</tr>
+        <!-- The Modal -->
+        <div id="modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <button id="greenOK">Completed</button>
+            <button id="yellowOK">Partly done</button>
+            <button id="redOK">Skipped</button>
+            <button id="clear-color">Clear</button>
+          </div>
+        </div>
 
-						<tr class="week25">
-							<td class="rowspan" rowspan="2">25</td>
-							<td id="week25mondayUpper" class="today monday week25monday"></td>
-							<td id="week25tuesdayUpper" class="today tuesday week25tuesday"></td>
-							<td id="week25wednesdayUpper" class="today wednesday week25wednesday"></td>
-							<td id="week25thursdayUpper" class="today thursday week25thursday"></td>
-							<td id="week25fridayUpper" class="today friday week25friday"></td>
-							<td id="week25saturdayUpper" class="today saturday week25saturday"></td>
-							<td id="week25sundayUpper" class="today sunday week25sunday"></td>
-						</tr>
-						<tr class="week25">
-							<td id="week25mondayLower" class="today mondaytext week25monday"></td>
-							<td id="week25tuesdayLower" class="today tuesdaytext week25tuesday"></td>
-							<td id="week25wednesdayLower" class="today wednesdaytext week25wednesday"></td>
-							<td id="week25thursdayLower" class="today thursdaytext week25thursday"></td>
-							<td id="week25fridayLower" class="today fridaytext week25friday"></td>
-							<td id="week25saturdayLower" class="today saturdaytext week25saturday"></td>
-							<td id="week25sundayLower" class="today sundaytext week25sunday"></td>
-						</tr>
+        <hr class="hr1" />
 
-						<tr class="week26">
-							<td class="rowspan" rowspan="2">26</td>
-							<td id="week26mondayUpper" class="today monday week26monday"></td>
-							<td id="week26tuesdayUpper" class="today tuesday week26tuesday"></td>
-							<td id="week26wednesdayUpper" class="today wednesday week26wednesday"></td>
-							<td id="week26thursdayUpper" class="today thursday week26thursday"></td>
-							<td id="week26fridayUpper" class="today friday week26friday"></td>
-							<td id="week26saturdayUpper" class="today saturday week26saturday"></td>
-							<td id="week26sundayUpper" class="today sunday week26sunday"></td>
-						</tr>
-						<tr class="week26">
-							<td id="week26mondayLower" class="today mondaytext week26monday"></td>
-							<td id="week26tuesdayLower" class="today tuesdaytext week26tuesday"></td>
-							<td id="week26wednesdayLower" class="today wednesdaytext week26wednesday"></td>
-							<td id="week26thursdayLower" class="today thursdaytext week26thursday"></td>
-							<td id="week26fridayLower" class="today fridaytext week26friday"></td>
-							<td id="week26saturdayLower" class="today saturdaytext week26saturday"></td>
-							<td id="week26sundayLower" class="today sundaytext week26sunday"></td>
-						</tr>
+        <div class="container" id="btns-print-startover">
+          <div class="row">
+            <div class="col-md-6">
+              <a
+                onclick="window.print();"
+                type="button"
+                id="print-pdf"
+                class="keeptrack-btns"
+                >Print</a
+              >
+            </div>
+            <div class="col-md-6">
+              <a
+                href="getstarted.html"
+                type="button"
+                id="start-over"
+                class="keeptrack-btns"
+                >Start over</a
+              >
+            </div>
+          </div>
+        </div>
 
-					</tbody>
+        <div id="share-some">
+          <h3 id="share-some-text">Share with your community</h3>
+          <a
+            href=""
+            onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436'); return false;"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+      </div>
+    </section>
 
-				</table>
-			</div>
+    <footer>
+      <div class="footer"></div>
+    </footer>
 
-			<!-- The Modal -->
-			<div id="modal" class="modal">
-				<!-- Modal content -->
-				<div class="modal-content">
-					<button id="greenOK">Completed</button>
-					<button id="yellowOK">Partly done</button>
-					<button id="redOK">Skipped</button>
-					<button id="clear-color">Clear</button>
-				</div>
-			</div>
-
-			<hr class="horizontal-line" />
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<a onclick="window.print();" id="print-pdf" class="btn btn-success">Print</a>
-					</div>
-					<div class="col-md-6">
-						<a href="getstarted.html" onclick="startOver()" id="start-over" class="btn btn-success">Start
-							over</a>
-					</div>
-				</div>
-			</div>
-
-			<hr class="horizontal-line" />
-
-			<div id="share-some">
-				<h3 id="share-some-text">Share with your community</h3>
-				<a href="" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-      'facebook-share-dialog', 
-      'width=626,height=436'); 
-    return false;"><img id="facebook-logo" src="assets/images/facebook_New_Logo_.png"
-          /></a>
-			</div>
-		</div>
-	</section>
-
-	<footer>
-		<div class="footer"></div>
-	</footer>
-
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-	</script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-	</script>
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	<script src="assets/js/scripts.js"></script>
-</body>
-
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
 </html>

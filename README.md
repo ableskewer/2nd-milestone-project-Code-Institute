@@ -26,3 +26,8 @@ https://css-tricks.com/examples/hrs/ hr-style-2
 https://freefrontend.com/css-text-animations/
 https://freefrontend.com/css-input-text/
 https://stackoverflow.com/questions/2587669/can-i-use-a-before-or-after-pseudo-element-on-an-input-field
+https://stackoverflow.com/questions/10845109/innerhtml-not-working-with-classname-in-js
+https://stackoverflow.com/questions/3391576/how-can-i-implement-prepend-and-append-with-regular-javascript
+https://stackoverflow.com/questions/2714765/using-border-radius-and-box-shadow-together-css
+https://stackoverflow.com/questions/7614928/change-br-height-using-css/28310011
+https://stackoverflow.com/questions/3262605/how-to-check-whether-a-storage-item-is-set
