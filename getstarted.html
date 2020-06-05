@@ -1,123 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-	<!-- Local CSS -->
-	<link rel="stylesheet" href="assets/css/style.css" />
+    <title>Get Started</title>
+  </head>
 
-	<title>Get Started</title>
-</head>
+  <body class="getstarted">
+    <header>
+      <div id="navbar">
+        <a href="index.html">Home</a>
+        <a id="getstarted-navbar" href="getstarted.html">Get started</a>
+        <a href="keeptrack.html">Keep track</a>
+      </div>
+    </header>
 
-<body class="getstarted">
+    <section>
+      <div class="bg getstarted">
+        <h1 class="getstarted heading">Let's get you started</h1>
 
-	<header>
-		<div id="navbar">
-			<a href="index.html">Home</a>
-			<a href="getstarted.html">Get started</a>
-			<a href="keeptrack.html">Keep track</a>
-		</div>
-	</header>
+        <hr class="hr1" />
 
-	<section>
-		<div class="bg getstarted">
-			<h1 class="getstarted heading">Let's get you started</h1>
+        <p class="getstarted subheading">
+          Please fill in a name and choose your preferences
+        </p>
 
-			<hr class="hr1"/>
-
-			<p class="getstarted subheading">
-				Please fill in a name and choose your preferences
-			</p>
-
-			<div class="container">
-				<div class="row">
-					<div class="col getstarted-input-box">
-						<form name="getstarted" action="keeptrack.html" id="lets-go-form">
-							<input
-                type="text"
-                id="inputName"
-                name="name"
-                value=""
-                placeholder="Name"
-                required
-              />
-							<div id="threedropdowns" class="container">
-								<div class="row">
-									<div class="col-md-4">
-										<select
-                      class="btn getstarted-options"
-                      id="distance"
-                      name="distance"
-                      required
-                    >
-                      <option value="" disabled selected hidden
-                        >Distance</option
+        <div class="container">
+          <div class="row">
+            <div class="col getstarted-input-box">
+              <form name="getstarted" action="keeptrack.html" id="lets-go-form">
+                <input
+                  type="text"
+                  id="inputName"
+                  name="name"
+                  maxlength="20"
+                  value=""
+                  placeholder="Name"
+                  required
+                />
+                <div id="threedropdowns" class="container">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <select
+                        class="btn getstarted-options"
+                        id="distance"
+                        name="distance"
+                        required
                       >
-                      <option value="Half Marathon">Half Marathon</option>
-                      <option value="Marathon">Marathon</option>
-                    </select>
-									</div>
-									<div class="col-md-4">
-										<select
-                      class="btn getstarted-options"
-                      id="difficulty"
-                      name="difficulty"
-                      required
-                    >
-                      <option value="" disabled selected hidden
-                        >Difficulty</option
+                        <option value="" disabled selected hidden
+                          >Distance</option
+                        >
+                        <option value="Half Marathon">Half Marathon</option>
+                        <option value="Marathon">Marathon</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select
+                        class="btn getstarted-options"
+                        id="difficulty"
+                        name="difficulty"
+                        required
                       >
-                      <option value="Beginner">Beginner</option>
-                      <option value="Intermediate">Intermediate</option>
-                    </select>
-									</div>
-									<div class="col-md-4">
-										<select
-                      class="btn getstarted-options"
-                      id="duration"
-                      name="duration"
-                      required
-                    >
-                      <option value="" disabled selected hidden
-                        >Duration</option
+                        <option value="" disabled selected hidden
+                          >Difficulty</option
+                        >
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select
+                        class="btn getstarted-options"
+                        id="duration"
+                        name="duration"
+                        required
                       >
-                      <option value="3 month">3 months</option>
-                      <option value="6 month">6 months</option>
-                    </select>
-									</div>
-								</div>
-							</div>
+                        <option value="" disabled selected hidden
+                          >Duration</option
+                        >
+                        <option value="3 month">3 months</option>
+                        <option value="6 month">6 months</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </form>
 
-						</form>
+              <button
+                id="btnLetsGo"
+                class="lets-go-btn"
+                type="submit"
+                form="lets-go-form"
+                value="Submit"
+              >
+                Let's Go
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-						<button id="btnLetsGo" class="lets-go-btn" type="submit" form="lets-go-form" value="Submit">Let's Go</button>
+    <footer>
+      <div class="footer">
+        <ul>
+          <li><span>Copyright &copy; 2020 </span>Daniel J. Kjeldsen</li>
+          <li id="footer-dot">&bull;</li>
+          <li>Contact @ <span>danse4@msn.com</span></li>
+        </ul>
+      </div>
+    </footer>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<footer>
-		<div class="footer"></div>
-	</footer>
-
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-	</script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-	</script>
-	<script src="assets/js/scripts.js"></script>
-</body>
-
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
 </html>

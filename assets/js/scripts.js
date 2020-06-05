@@ -12,25 +12,34 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
-
 // .................... Scripts for index.html ............... //
 
 $(function () {
   if ($("body").is(".index")) {
-    
-    document.getElementById("linktoKeepTrack").addEventListener("click", function () {
-    confirm("Press a button!");
-   })
-};
-});
+    //colors the right navbar Id font, only on this page
+    document.getElementById("index-navbar").style.color = "#c24e01";
 
+    //when clicking on keeptrack-navbar, it will promt you to go to getstarted if localStorage is empty
+    document
+      .getElementById("linktoKeepTrack")
+      .addEventListener("click", function () {
+        //     if ((localStorage.getitem == null) == true); {
+        //     confirm("");
+        //     } else {
+        //       window.location = "https://8000-ef77315d-12fc-40fb-9a28-e20b13f24205.ws-eu01.gitpod.io/keeptrack.html";
+        //     }
+      });
+  }
+});
 
 // .................... Scripts for getstarted.html ............... //
 
 $(function () {
   if ($("body").is(".getstarted")) {
-    //Saving user input from getstarted.html to localStorage
+    //colors the right navbar Id font, only on this page
+    document.getElementById("getstarted-navbar").style.color = "#c24e01";
 
+    //Saving user input from getstarted.html to localStorage
     var inputName = document.getElementById("inputName");
     var optionDistance = document.getElementById("distance");
     var optionDifficulty = document.getElementById("difficulty");
@@ -52,12 +61,14 @@ $(function () {
   }
 });
 
-
 // .................... Scripts for keeptrack.html ............... //
 
-//Loading the user input from localeStorage creating a custom title for the training plan
 $(function () {
   if ($("body").is(".keeptrack")) {
+    //colors the right navbar Id font, only on this page
+    document.getElementById("keeptrack-navbar").style.color = "#c24e01";
+
+    //Gets items from localeStorage creating a custom title for the training plan
     var lsGetStartedFormOutput = document.getElementsByClassName(
       "lsGetStartedFormOutput"
     );
@@ -73,7 +84,7 @@ $(function () {
     var lsOutputTableHeader = document.getElementById("lsOutputTableHeader");
     lsOutputTableHeader.innerHTML += `${Distance} training plan - ${Duration}s (${Difficulty})`;
 
-    //cycles through localStorage retrieving background-color for Ids with "week" in them
+    //cycles through localStorage retrieving background-color for Ids with "week" in them.
     for (var i = 0; i < localStorage.length; ++i) {
       dayId = localStorage.key(i);
       bgColor = localStorage.getItem(localStorage.key(i));
@@ -82,7 +93,7 @@ $(function () {
         document.getElementById(dayId).style.backgroundColor = bgColor;
     }
 
-    //Background-color change on Hover for each day, monday through sunday                          ***Currently Not working as intended***
+    //Background-color change on hover for each day, monday through sunday                          ***Currently Not working as intended - TO DO LIST***
     if ($(".today").css("background-color") == "") {
       $(".today").mouseover(function () {
         $(this).css("background-color", "yellow");
@@ -96,18 +107,15 @@ $(function () {
     }
 
     // When any day is clicked a modal appears and you can click one of 4 buttons
-    //Get the modal and the open-modal-button
     var modal = document.getElementById("modal");
     var btns = document.getElementsByClassName("today");
     var btnsLength = btns.length;
 
-    // Get the appropriate color butten in the modal
     var green = document.getElementById("greenOK");
     var yellow = document.getElementById("yellowOK");
     var red = document.getElementById("redOK");
     var clear = document.getElementById("clear-color");
 
-    //Looping through the clickable elements, giving 4 options to modify
     for (var i = 0; i < btnsLength; i++) {
       btns[i].onclick = function () {
         modal.style.display = "block";
@@ -131,7 +139,7 @@ $(function () {
         };
 
         red.onclick = function () {
-          clickedButton.style.backgroundColor = "#FF2B00";
+          clickedButton.style.backgroundColor = "#9B2335";
           modal.style.display = "none";
           var thisBgColor = document.getElementById(thisId).style
             .backgroundColor;
@@ -155,8 +163,7 @@ $(function () {
       }
     };
 
-    //Table, this code shows/hides the appropriate training table depending on 3 parameters
-    //All in all 8 different tables can be shown. Table 1-8.
+    //Table, this code shows/hides the appropriate training table depending on 3 parameters - all in all 8 different tables can be shown.
 
     //If 3 month plan, 6 months wont show - else it will
     if (localStorage.getItem("duration") == "3 month") {

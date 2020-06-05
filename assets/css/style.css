@@ -2,6 +2,7 @@
 
 body {
   font-family: "Raleway", sans-serif;
+  color: #fafafa;
 }
 
 body,
@@ -9,15 +10,7 @@ html {
   height: 100%;
 }
 
-/* Styling of Font-colors*/
-
-.mainpage.heading,
-.getstarted.heading,
-.keeptrack.heading {
-  color: #fafafa;
-}
-
-/* --- Nav Bar ---*/
+/* ------------------ Nav Bar ------------------ */
 body {
   margin: 0;
 }
@@ -46,11 +39,12 @@ body {
 #navbar a:hover {
   background-color: #ddd;
   color: #c24e01;
+  font-weight: bold;
 }
 
-/* --- Body Section  --- */
+/* ------------------ Body Section ------------------ */
 
-/* Main Page */
+/* ------------------------------------  Main Page ------------------------------------ */
 
 .mainpage .heading {
   padding-top: 100px;
@@ -178,10 +172,6 @@ body {
   box-shadow: 0px 0px 6px 0px #c24e01;
 }
 
-/* .bullet-points li {
-  display: inline;
-} */
-
 .wrap-bullet-points {
   width: 270px;
   padding-top: 30px;
@@ -190,10 +180,9 @@ body {
 
 #start-here {
   padding-top: 40px;
-  padding-bottom: 150px;
+  padding-bottom: 120px;
 }
 
-/*     Start here button styling       */
 .start-here-btn {
   width: 220px;
   height: 50px;
@@ -278,7 +267,7 @@ body {
   }
 }
 
-/* Get Started */
+/* ------------------------------------ Get Started ------------------------------------  */
 
 .bg.getstarted {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -315,7 +304,8 @@ body {
   height: 50px;
   text-align: center;
   margin-bottom: 40px;
-  border-radius: 4px;
+  border-radius: 6px;
+  border: solid 1px black;
 }
 
 #inputName:focus {
@@ -439,7 +429,7 @@ button:focus {
   }
 }
 
-/* Keep Track */
+/* ------------------------------------ Keep Track ------------------------------------ */
 
 .keeptrack.heading {
   padding-top: 100px;
@@ -450,7 +440,7 @@ button:focus {
   color: #fafafa;
   font-size: 1.3rem;
   padding-top: 0;
-  margin: 60px 0;
+  margin: 40px 0 30px;
   font-weight: 200;
 }
 
@@ -488,14 +478,14 @@ button:focus {
   background-color: #000000;
 }
 
-/* Table */
+/* -- Table -- */
 
 #lsOutputTableHeader {
   font-size: 1rem;
 }
 
 #table-center {
-  margin: 0 auto 70px;
+  margin: 0 auto 30px;
   text-align: center;
 }
 
@@ -506,6 +496,7 @@ button:focus {
 
 table {
   border-collapse: separate;
+  color: #000;
 }
 
 th {
@@ -547,7 +538,7 @@ td {
   z-index: 1;
   padding-top: 50px;
   left: 0;
-  top: 0;
+  top: 20%;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -555,27 +546,22 @@ td {
 
 .modal-content {
   background-color: #333;
-  border: solid 1px #333;
+  border: solid 1px white;
   margin: auto;
   padding: 7px;
   width: 280px;
-  height: 285px;
-  border-radius: 0;
-  -webkit-box-shadow: 0px 0px 10px #c24e01;
-  -moz-box-shadow: 0px 0px 10px #c24e01;
-  box-shadow: 0px 0px 10px #c24e01;
-  opacity: 0.95;
+  height: 315px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 8px #c24e01;
+  -moz-box-shadow: 0px 0px 8px #c24e01;
+  box-shadow: 0px 0px 8px #c24e01;
+  opacity: 0.9;
 }
 
 .modal-content button {
   margin: 15px auto;
   width: 120px;
   color: #fafafa;
-}
-
-#greenOK:hover {
-  color: #c24e01 !important;
-  background-color: #ddd;
 }
 
 #greenOK {
@@ -585,13 +571,20 @@ td {
   border: none;
   outline: none;
   color: #fff;
-  background: #111;
   cursor: pointer;
   position: relative;
   z-index: 0;
-  border-radius: 10px;
+  border-radius: 12px;
   line-height: 3rem;
   font-size: 20px;
+}
+
+#greenOK:hover {
+  color: #c24e01;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  background-color: rgb(41, 95, 45);
 }
 
 #greenOK:before {
@@ -630,11 +623,6 @@ td {
   background: transparent;
 }
 
-#greenOK:hover {
-  color: #c24e01;
-  text-decoration: none;
-}
-
 #greenOK:hover:before {
   opacity: 1;
 }
@@ -652,19 +640,19 @@ td {
 }
 
 #yellowOK {
-  background-color: #ffff00;
-  transition: all 0.6s ease-in-out;
+  background-color: #ffdc00;
+  transition: all 0.4s ease-in-out;
   color: #000;
   width: 150px;
-  padding: 7px 0;
+  padding: 6px 0;
   border-radius: 8px;
   border: solid 1px #333;
 }
 
 #yellowOK:hover {
-  border: solid 0px #333;
-  transform: scale(1.3);
-  border-radius: 20px;
+  border: solid 1px #333;
+  transform: scale(1.2);
+  border-radius: 10px;
   color: #c24e01;
   font-weight: bold;
   font-size: 1rem;
@@ -673,16 +661,59 @@ td {
   box-shadow: 0px 0px 10px #c24e01;
 }
 
+#yellowOK:active {
+  color: #c24e01;
+  background-color: #333;
+  border: solid 1px #fafafa;
+  transition: none;
+}
+
 #redOK {
-  background-color: #ff0000;
+  background-color: #9b2335;
+  color: #fafafa;
+  border-radius: 5px;
+  border: solid 1px #333;
+  transition: all 0.3s ease-in-out;
+}
+
+#redOK:hover {
+  transform: scale(0.8);
+}
+
+#redOK:after {
+  content: "Skipped";
+}
+
+#redOK:hover:after {
+  content: "Ouch";
+}
+
+#redOK:active {
+  color: #c24e01;
+  background: #333;
+  border: solid 1px #fafafa;
+  transition: none;
 }
 
 #clear-color {
+  border: solid 1px #333;
+  color: #333;
+  border-radius: 5px;
   background-color: #fafafa;
 }
 
+#clear-color:hover {
+  color: #c24e01;
+  font-weight: bold;
+}
+
+#clear-color:active {
+  background-color: #333;
+  border: solid 1px #fafafa;
+}
+
 #btns-print-startover {
-  margin: 70px auto 40px;
+  margin: 40px auto 40px;
   color: #fafafa;
 }
 
@@ -790,6 +821,8 @@ td {
 #share-some-text {
   color: #fafafa;
   padding-bottom: 15px;
+  font-size: 1.7rem;
+  font-weight: 200;
 }
 
 .fab {
@@ -803,12 +836,13 @@ td {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px #c24e01;
-  -moz-box-shadow: 0px 0px 10px #c24e01;
-  box-shadow: 0px 0px 10px #c24e01;
+  -webkit-box-shadow: 0px -4px 7px #c24e01;
+  -moz-box-shadow: 0px -4px 7px #c24e01;
+  box-shadow: 0px -4px 7px #c24e01;
+  background-color: #c24e01;
 }
 
-/* Footer */
+/* ------------------------------------ Footer ------------------------------------ */
 .footer {
   background-color: #333;
   position: fixed;
@@ -817,9 +851,33 @@ td {
   display: block;
   opacity: 80%;
   height: 50px;
+  text-align: center;
 }
 
-/* Media Queries */
+footer ul {
+  list-style-type: none;
+  color: #fafafa;
+  padding: 15px 0;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  float: left;
+  padding: 0 10px;
+}
+
+#footer-dot {
+  font-size: 1.6rem;
+  line-height: 0.8;
+}
+
+footer span {
+  color: #c24e01;
+}
+
+/* ------------------------------------ Media Queries ------------------------------------ */
 
 @media (min-width: 992px) {
   .container {
@@ -877,6 +935,16 @@ td {
   }
 }
 
+@media screen and (max-width: 480px) {
+  footer ul {
+    padding: 5px 0;
+  }
+  
+  #footer-dot {
+      line-height: 1.5;
+  }
+}
+
 @media screen and (max-width: 380px) {
   #table {
     border-collapse: collapse;
@@ -900,4 +968,4 @@ td {
   }
 }
 
-/* ------- The End ------- */
+/* ------------------------- The End ------------------------- */

@@ -31,7 +31,7 @@
       <div id="navbar">
         <a href="index.html">Home</a>
         <a href="getstarted.html">Get started</a>
-        <a href="keeptrack.html">Keep track</a>
+        <a id="keeptrack-navbar" href="keeptrack.html">Keep track</a>
       </div>
     </header>
 
@@ -46,16 +46,6 @@
           The progress will be saved even if you close the browser.<br />
           <small>(Does not work for incognito)</small>
         </h3>
-        <h4 class="wordCarousel">
-          <div class="divCarousel">
-            <ul class="flip4">
-              <li class="lsGetStartedFormOutput">Don't give up</li>
-              <li class="lsGetStartedFormOutput">Believe in yourself</li>
-              <li class="lsGetStartedFormOutput">You are Amazing</li>
-              <li class="lsGetStartedFormOutput">Good luck</li>
-            </ul>
-          </div>
-        </h4>
 
         <div class="table-div">
           <table id="table-center" class="table-fonts table-striped">
@@ -79,14 +69,26 @@
               <tr class="week1">
                 <td class="rowspan" rowspan="2">1</td>
                 <td id="week1mondayUpper" class="today monday week1monday"></td>
-                <td id="week1tuesdayUpper" class="today tuesday week1tuesday"></td>
-                <td id="week1wednesdayUpper" class="today wednesday week1wednesday"></td>
-                <td id="week1thursdayUpper" class="today thursday week1thursday"></td>
+                <td
+                  id="week1tuesdayUpper"
+                  class="today tuesday week1tuesday"
+                ></td>
+                <td
+                  id="week1wednesdayUpper"
+                  class="today wednesday week1wednesday"
+                ></td>
+                <td
+                  id="week1thursdayUpper"
+                  class="today thursday week1thursday"
+                ></td>
                 <td id="week1fridayUpper" class="today friday week1friday"></td>
-                <td id="week1saturdayUpper" class="today saturday week1saturday"></td>
+                <td
+                  id="week1saturdayUpper"
+                  class="today saturday week1saturday"
+                ></td>
                 <td id="week1sundayUpper" class="today sunday week1sunday"></td>
               </tr>
-              
+
               <tr class="week1">
                 <td
                   id="week1mondayLower"
@@ -1601,13 +1603,24 @@
           </table>
         </div>
 
+        <h4 class="wordCarousel">
+          <div class="divCarousel">
+            <ul class="flip4">
+              <li class="lsGetStartedFormOutput">Don't give up,</li>
+              <li class="lsGetStartedFormOutput">Believe in yourself,</li>
+              <li class="lsGetStartedFormOutput">You are amazing,</li>
+              <li class="lsGetStartedFormOutput">Good luck,</li>
+            </ul>
+          </div>
+        </h4>
+
         <!-- The Modal -->
         <div id="modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
             <button id="greenOK">Completed</button>
-            <button id="yellowOK">Partly done</button>
-            <button id="redOK">Skipped</button>
+            <button id="yellowOK">Partly finished</button>
+            <button id="redOK"></button>
             <button id="clear-color">Clear</button>
           </div>
         </div>
@@ -1650,7 +1663,13 @@
     </section>
 
     <footer>
-      <div class="footer"></div>
+      <div class="footer">
+        <ul>
+          <li><span>Copyright &copy; 2020 </span>Daniel J. Kjeldsen</li>
+          <li id="footer-dot">&bull;</li>
+          <li>Contact @ <span>danse4@msn.com</span></li>
+        </ul>
+      </div>
     </footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
