@@ -11,6 +11,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
     <!-- Local CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -22,29 +23,28 @@
       <div id="navbar">
         <a href="index.html">Home</a>
         <a id="getstarted-navbar" href="getstarted.html">Get started</a>
-        <a href="keeptrack.html">Keep track</a>
+        <a id="keeptrack-navbar" href="keeptrack.html">Keep track</a>
       </div>
     </header>
 
     <section>
       <div class="bg getstarted">
         <h1 class="getstarted heading">Let's get you started</h1>
-
         <hr class="hr1" />
-
         <p class="getstarted subheading">
           Please fill in a name and choose your preferences
         </p>
-
         <div class="container">
           <div class="row">
             <div class="col getstarted-input-box">
               <form name="getstarted" action="keeptrack.html" id="lets-go-form">
                 <input
                   type="text"
+                  autocomplete="off"
                   id="inputName"
                   name="name"
                   maxlength="20"
+                  minlength="1"
                   value=""
                   placeholder="Name"
                   required
@@ -96,7 +96,6 @@
                   </div>
                 </div>
               </form>
-
               <button
                 id="btnLetsGo"
                 class="lets-go-btn"
@@ -138,6 +137,8 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    
+    <!-- Local JS -->
     <script src="assets/js/scripts.js"></script>
   </body>
 </html>

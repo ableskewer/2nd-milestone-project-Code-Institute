@@ -32,13 +32,12 @@ https://stackoverflow.com/questions/2714765/using-border-radius-and-box-shadow-t
 https://stackoverflow.com/questions/7614928/change-br-height-using-css/28310011
 https://stackoverflow.com/questions/3262605/how-to-check-whether-a-storage-item-is-set
 https://stackoverflow.com/questions/19058421/how-to-change-content-on-hover
-
+https://stackoverflow.com/questions/7540085/disable-text-input-history
 
 TO DO 
 FIRST
-- scripte keeptrack knap på index.html
-- scripte keeptrack knap på getstarted.html
 - skrive readme.md filen
+- gøre Lower tablerows unclickable
 
 SECOND
 - correct hover fearture on training program table

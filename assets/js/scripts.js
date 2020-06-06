@@ -1,6 +1,6 @@
-// .................... Scripts for all pages ............... //
+// ........................................ Scripts for all pages ........................................ //
 
-// Navbar scroll down hide/up show
+// Navbar scroll down = hide, scroll up = show
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
@@ -12,32 +12,42 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
-// .................... Scripts for index.html ............... //
+//Hides keeptrack link from navbar if nothing has been saved to localStorage
+if (
+  localStorage.getItem("name") == null &&
+  localStorage.getItem("distance") == null &&
+  localStorage.getItem("difficulty") == null &&
+  localStorage.getItem("duration") == null
+) {
+  document.getElementById("keeptrack-navbar").innerHTML = "";
+}
+
+// ........................................ Scripts for index.html ........................................ //
 
 $(function () {
   if ($("body").is(".index")) {
-    //colors the right navbar Id font, only on this page
+    //colors the text of current navbar page
     document.getElementById("index-navbar").style.color = "#c24e01";
-
-    //when clicking on keeptrack-navbar, it will promt you to go to getstarted if localStorage is empty
-    document
-      .getElementById("linktoKeepTrack")
-      .addEventListener("click", function () {
-        //     if ((localStorage.getitem == null) == true); {
-        //     confirm("");
-        //     } else {
-        //       window.location = "https://8000-ef77315d-12fc-40fb-9a28-e20b13f24205.ws-eu01.gitpod.io/keeptrack.html";
-        //     }
-      });
   }
 });
 
-// .................... Scripts for getstarted.html ............... //
+// ........................................ Scripts for getstarted.html ........................................ //
 
 $(function () {
   if ($("body").is(".getstarted")) {
-    //colors the right navbar Id font, only on this page
+    //colors the text of current navbar page
     document.getElementById("getstarted-navbar").style.color = "#c24e01";
+
+    if (
+      localStorage.getItem("name") != null &&
+      localStorage.getItem("distance") != null &&
+      localStorage.getItem("difficulty") != null &&
+      localStorage.getItem("duration") != null
+    ) {
+      //Changes buttontext if data is already in localStorage
+      document.getElementById("btnLetsGo").style.fontSize = "1.4rem";
+      document.getElementById("btnLetsGo").innerHTML = "Reset & Let's Go";
+    }
 
     //Saving user input from getstarted.html to localStorage
     var inputName = document.getElementById("inputName");
@@ -46,27 +56,60 @@ $(function () {
     var optionDuration = document.getElementById("duration");
     var btnLetsGo = document.getElementById("btnLetsGo");
 
+    //Button clears localStorage and submits form if it has value.
     btnLetsGo.onclick = function () {
       var valueName = inputName.value;
       var valueDistance = optionDistance.value;
       var valueDifficulty = optionDifficulty.value;
       var valueDuration = optionDuration.value;
-
       localStorage.clear();
-      localStorage.setItem("name", valueName);
-      localStorage.setItem("distance", valueDistance);
-      localStorage.setItem("difficulty", valueDifficulty);
-      localStorage.setItem("duration", valueDuration);
+
+      //Submits form to localStorage if all options has value
+      if (
+        valueName.length > 0 &&
+        valueDistance.length > 0 &&
+        valueDifficulty.length > 0 &&
+        valueDuration.length > 0
+      ) {
+        localStorage.setItem("name", valueName);
+        localStorage.setItem("distance", valueDistance);
+        localStorage.setItem("difficulty", valueDifficulty);
+        localStorage.setItem("duration", valueDuration);
+      }
+
+      //removes access to keeptrack.html if localStorage.key "name" has no value.
+      if (localStorage.getItem("name") == null) {
+        document.getElementById("keeptrack-navbar").innerHTML = "";
+      }
+
+      //resets button to former style/text
+      document.getElementById("btnLetsGo").style.fontSize = "20px";
+      document.getElementById("btnLetsGo").innerHTML = "Let's Go";
     };
   }
 });
 
-// .................... Scripts for keeptrack.html ............... //
+// ........................................ Scripts for keeptrack.html ........................................ //
 
 $(function () {
   if ($("body").is(".keeptrack")) {
-    //colors the right navbar Id font, only on this page
+    //colors the text of current navbar page
     document.getElementById("keeptrack-navbar").style.color = "#c24e01";
+
+    //Simplifies keeptrack page if form has not been filled out and somehow user still manages to get there.
+    if (localStorage.getItem("name") == null) {
+      document.getElementById("keeptrack-subheading").style.display = "none";
+      document.getElementById("lsOutputTableHeader").style.display = "none";
+      document.getElementById("hrUpper").style.display = "none";
+      document.getElementById("share-some").style.display = "none";
+      document.getElementById("keeptrackCarousel").style.display = "none";
+      document.getElementById("hrLower").style.display = "none";
+      document.getElementById("print-pdf").style.display = "none";
+      document.getElementById("startover-div-btn").classList.remove("col-md-6");
+      document.getElementById("startover-div-btn").classList.add("col-md-12");
+      document.getElementById("startover-div-btn").style.paddingBottom = "100px";
+      document.getElementById("btns-print-startover").style.marginBottom = "0";
+    }
 
     //Gets items from localeStorage creating a custom title for the training plan
     var lsGetStartedFormOutput = document.getElementsByClassName(
@@ -88,16 +131,9 @@ $(function () {
     for (var i = 0; i < localStorage.length; ++i) {
       dayId = localStorage.key(i);
       bgColor = localStorage.getItem(localStorage.key(i));
-
-      if (dayId.startsWith("week") == true)
+      if (dayId.startsWith("week") == true) {
         document.getElementById(dayId).style.backgroundColor = bgColor;
-    }
-
-    //Background-color change on hover for each day, monday through sunday                          ***Currently Not working as intended - TO DO LIST***
-    if ($(".today").css("background-color") == "") {
-      $(".today").mouseover(function () {
-        $(this).css("background-color", "yellow");
-      });
+      }
     }
 
     if ($(".today").css("background-color") == "yellow") {
@@ -116,14 +152,14 @@ $(function () {
     var red = document.getElementById("redOK");
     var clear = document.getElementById("clear-color");
 
-    for (var i = 0; i < btnsLength; i++) {
+    for (i = 0; i < btnsLength; i++) {
       btns[i].onclick = function () {
         modal.style.display = "block";
         var clickedButton = this;
         var thisId = this.id;
 
         green.onclick = function () {
-          clickedButton.style.backgroundColor = "#90EE90";
+          clickedButton.style.backgroundColor = "#3D9970";
           modal.style.display = "none";
           var thisBgColor = document.getElementById(thisId).style
             .backgroundColor;
@@ -131,7 +167,7 @@ $(function () {
         };
 
         yellow.onclick = function () {
-          clickedButton.style.backgroundColor = "#FFFF33";
+          clickedButton.style.backgroundColor = "#FFDC00";
           modal.style.display = "none";
           var thisBgColor = document.getElementById(thisId).style
             .backgroundColor;
@@ -166,11 +202,10 @@ $(function () {
     //Table, this code shows/hides the appropriate training table depending on 3 parameters - all in all 8 different tables can be shown.
 
     //If 3 month plan, 6 months wont show - else it will
+    var table6months = document.getElementById("table-6-months");
     if (localStorage.getItem("duration") == "3 month") {
-      var table6months = document.getElementById("table-6-months");
       table6months.style.display = "none";
     } else {
-      var table6months = document.getElementById("table-6-months");
       table6months.style.display = "table-row-group";
     }
 
@@ -857,5 +892,27 @@ $(function () {
       $("#week26sundayUpper").html("Marathon");
       $("#week26sundayLower").html("Good Luck");
     }
+
+    //print btn: prepares page to be printed and resets page immediately after
+    document.getElementById("print-pdf").addEventListener("click", function () {
+      document.getElementById("keeptrack-heading").style.display = "none";
+      document.getElementById("keeptrack-subheading").style.display = "none";
+      document.getElementById("keeptrack-heading").style.display = "none";
+      document.getElementById("share-some").style.display = "none";
+      document.getElementById("btns-print-startover").style.display = "none";
+      document.getElementById("hrLower").style.display = "none";
+      document.getElementById("hrUpper").style.display = "none";
+      document.getElementById("lsOutputTableHeader").style.fontSize = "2rem";
+
+      window.print();
+      document.getElementById("keeptrack-heading").style.display = "block";
+      document.getElementById("keeptrack-subheading").style.display = "block";
+      document.getElementById("keeptrack-heading").style.display = "block";
+      document.getElementById("share-some").style.display = "block";
+      document.getElementById("btns-print-startover").style.display = "block";
+      document.getElementById("hrLower").style.display = "block";
+      document.getElementById("hrUpper").style.display = "block";
+      document.getElementById("lsOutputTableHeader").style.fontSize = "1rem";
+    });
   }
 });

@@ -109,6 +109,7 @@ body {
   font-size: 36px;
   color: #939393;
   margin-top: 40px;
+  line-height: 1.2;
 }
 
 .divCarousel {
@@ -196,6 +197,7 @@ body {
   border-radius: 10px;
   line-height: 3rem;
   font-size: 20px;
+  -webkit-appearance: button;
 }
 
 .start-here-btn:before {
@@ -309,8 +311,9 @@ body {
 }
 
 #inputName:focus {
-  border-width: 2px;
-  border-radius: 5px;
+  border-width: 1px;
+  color: #000;
+  border: solid 1px #c24e01;
 }
 
 #threedropdowns {
@@ -531,6 +534,11 @@ td {
   padding: 0;
 }
 
+.today:hover {
+  background-color: #f39658;
+  cursor: pointer;
+}
+
 /* Modal PopUp & buttons */
 .modal {
   display: none;
@@ -555,7 +563,7 @@ td {
   -webkit-box-shadow: 0px 0px 8px #c24e01;
   -moz-box-shadow: 0px 0px 8px #c24e01;
   box-shadow: 0px 0px 8px #c24e01;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .modal-content button {
@@ -577,6 +585,7 @@ td {
   border-radius: 12px;
   line-height: 3rem;
   font-size: 20px;
+  background-color: #3d9970;
 }
 
 #greenOK:hover {
@@ -584,7 +593,6 @@ td {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.4rem;
-  background-color: rgb(41, 95, 45);
 }
 
 #greenOK:before {
@@ -611,7 +619,6 @@ td {
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
@@ -633,7 +640,7 @@ td {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgb(41, 95, 45);
+  background: #3d9970;
   left: 0;
   top: 0;
   border-radius: 10px;
@@ -678,6 +685,7 @@ td {
 
 #redOK:hover {
   transform: scale(0.8);
+  color: #c24e01;
 }
 
 #redOK:after {
@@ -736,6 +744,7 @@ td {
   border-radius: 10px;
   line-height: 3rem;
   font-size: 20px;
+  -webkit-appearance: button;
 }
 
 .keeptrack-btns:before {
@@ -815,7 +824,7 @@ td {
 }
 
 #share-some {
-  padding-bottom: 100px;
+  padding-bottom: 80px;
 }
 
 #share-some-text {
@@ -939,9 +948,9 @@ footer span {
   footer ul {
     padding: 5px 0;
   }
-  
+
   #footer-dot {
-      line-height: 1.5;
+    line-height: 1.5;
   }
 }
 
@@ -966,6 +975,10 @@ footer span {
   th:first-child {
     min-width: 30px;
   }
+
+  .wordCarousel {
+    font-size: 1.5rem;
 }
+
 
 /* ------------------------- The End ------------------------- */
