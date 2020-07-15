@@ -146,10 +146,7 @@ I have done no scripted testing. Just the most obvious: F5(refresh), responsiven
 
 ## Deployment
 
-This site is deployed using [GitHub pages](https://pages.github.com/). Selecting the 
-[repository](https://github.com/ableskewer/2nd-milestone-project-Code-Institute)
-containing the files, images, code, I pressed "settings", scrolled down and chose "master branch" under "deployment" publishing my 
-site here: [Marathon Training Program](https://ableskewer.github.io/2nd-milestone-project-Code-Institute/).
+This site is deployening Program](https://ableskewer.github.io/2nd-milestone-project-Code-Institute/).
 
 This is more or less all I know about GibHub pages and cant unfortunately inform you about git-brances or
 local code.
